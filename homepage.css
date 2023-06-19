@@ -125,29 +125,23 @@ header ul li a:hover, header ul li a:focus {
     align-items: center;
     display: flex;
     padding: 10px 15px;
-    background-color: white;
-    outline: 3px black solid;
-    border-radius: 5px;
+    background: white;
+    outline: 3px solid #315cfd;
+    border-radius: 45px;
     border: none;
     cursor: pointer;
-    transition: 0.6s;
+    transition: all 0.6s;
+    font-size: 0.5em;
+    font-weight: 800;
+    color: black;
     margin: 10px;
     margin-top: 5px;
 }
 
-.button1 .text, .button2 .text {
-    color: black;
-    font-weight: 700;
-    font-size: 2em;
-    transition: 400ms;
-}
-
 .button1:hover, .button2:hover {
-    background-color: lightskyblue;
-}
-  
-.button1:hover .text, .button2:hover .text {
-    color: black;
+    background-color: #315cfd;
+    color: white;
+    font-size: 0.8em;
 }
 
 a {
@@ -182,26 +176,20 @@ a {
     align-items: center;
     display: flex;
     padding: 10px 15px;
-    background-color: white;
-    outline: 3px black solid;
-    border-radius: 5px;
+    background: white;
+    outline: 3px solid #315cfd;
+    border-radius: 45px;
     border: none;
     cursor: pointer;
-    transition: 0.6s;
+    transition: all 0.6s;
+    font-size: 0.5em;
+    font-weight: 800;
+    color: black;
     margin: auto;
 }
 
-.button3 .text {
-    color: black;
-    font-weight: 700;
-    font-size: 1em;
-    transition: 400ms;
-}
-
 .button3:hover {
-    background-color: lightskyblue;
-}
-  
-.button3:hover .text {
-    color: black;
+    background-color: #315cfd;
+    color: white;
+    font-size: 0.8em;
 }
