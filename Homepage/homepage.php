@@ -54,15 +54,19 @@
 
                 <div class="riga">
                     <div class="contatto1" id="centralino">
-                        <h2>Centralino</h2><p>0420-69-90-104</p>
+                    <i class="fa fa-phone" style="font-size: x-large"></i>
+                        <h2>Centralino</h2>
+                        <p>0420-69-90-104</p>
                     </div>
 
                     <div class="contatto2" id="e-mail">
+                        <a href="https://mail.google.com" target="_blank" class="fa fa-at" style="font-size: x-large; font-weight: bold;"></a>
                         <h2>E-mail</h2>
                         <p>assistenza.anziani@gmail.com</p>
                     </div>
 
                     <div class="contatto3" id="dove_siamo">
+                        <a href="https://maps.google.com" target="_blank" class="fa fa-map" style="font-size: x-large"></a>
                         <h2>Dove Siamo</h2>
                         <p>Via Roma, 208</p>
                     </div>

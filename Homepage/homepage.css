@@ -9,7 +9,7 @@
 }
 
 body {
-    min-height: 100%;
+    min-height: 200vh;
 }
 
 /* impostando l'immagine di sfondo in questo modo, creo l'effetto parallasse (parallax) */
