@@ -12,7 +12,7 @@ body {
     min-height: 100%;
 }
 
-/* impostando l'immagine di sfondo in questo modo, creo l'effetto parallasse (parallax) */
+/* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
     background-image:url(../images/homepage2.jpg);
     height: 1000px;
@@ -157,7 +157,7 @@ header ul li a:hover, header ul li a:focus {
     font-weight: bold;
 }
 
-a {
+.button1 a, .button2 a {
     text-decoration: none;
     color: black;
 }
@@ -168,9 +168,9 @@ a {
 .central {
     display: -webkit-flex;
     display: flex;
-    /* parallax */
-    background-image:url(../images/home.jpg);
     height: 100%;
+    /* parallax */
+    background-image: url(../images/home.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -224,6 +224,11 @@ a {
     font-weight: bold;
 }
 
+.button3 a {
+    text-decoration: none;
+    color: black;
+}
+
 /*
  * CONTATTI
  */
@@ -232,7 +237,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightskyblue;
+    background-color: #023e8a;
 }
 
 .contatti h1 {
@@ -257,13 +262,14 @@ a {
     flex-direction: column;
     padding: 18px 25px;
     width: fit-content;
+    height: min-content;
     background: white;
     outline: 3px solid #315cfd;
     border-radius: 12px;
     border: none;
     cursor: pointer;
-    font-size: 1em;
     color: black;
+    font-size: 1em;
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 50px;
@@ -273,15 +279,36 @@ a {
 .contatto1 h2, .contatto2 h2, .contatto3 h2 {
     font-weight: 550;
     text-align: center;
+    margin-top: 10px;
 }
 
-.contatto1 p, .contatto2 p, .contatto3 p {
+.contatto1 p, .contatto2 p {
     font-weight: bolder;
     text-align: center;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.contatto3 address {
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .contatto1:hover, .contatto2:hover, .contatto3:hover {
     transform: scale(1.2);
+}
+
+.contatto1 a, .contatto2 a, .contatto3 a {
+    text-decoration: none;
+    color: black;
+}
+
+/*
+ * DIVIDER
+ */
+.divider {
+    border-top: 4px solid gray;
 }
 
 /*
@@ -295,14 +322,15 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: lightgray;
+    background-color: #023e8a;
+    color: white;
     z-index: 1;
 }
 
 footer h2 {
     margin-top: 25px;
     font-size: xx-large;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 footer ul {
@@ -312,7 +340,7 @@ footer ul {
     align-items: center;
     margin-top: 30px;
     margin-bottom: 40px;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 footer ul li {
@@ -329,3 +357,12 @@ footer ul li a {
     font-weight: bolder;
     transition: 0.5s;
 }
+
+/*
+ * RESPONSIVITÀ FINESTRA
+ */
+ /*
+@media screen and (max width: 1000px) {
+    
+}
+*/

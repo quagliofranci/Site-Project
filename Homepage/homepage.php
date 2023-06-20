@@ -1,6 +1,5 @@
 <?php
     session_start();
-    // include(../aggiorna_cookie.php);
 ?>
 
 <!DOCTYPE html>
@@ -12,15 +11,16 @@
         <meta name="description" content="Un sito dedicato al volontariato verso gli anziani."/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="keywords" content="Volontariato anziani assistenza"/>
-        <link rel="icon" href="./images/icon.jpg" type="image/jpg"/>
+        <link rel="icon" href="../images/icon.jpg" type="image/jpg"/>
         <link rel="stylesheet" type="text/css" href="./homepage.css"/>
     </head>
 
     <body>
+        
         <div class="container">
             
             <!-- HEADER -->
-            <?php include("./header-home.php"); ?>
+            <?php include("./header.php"); ?>
             
             <!-- SEZIONE CENTRALE -->
             <div class="upper">
@@ -30,11 +30,11 @@
                     <p>I servizi che offriamo sono molteplici, spaziano dalla semplice chiacchierata alle commissioni fino ad aiuti in ambito sanitario</p>
                     
                     <button class="button1">
-                        <a href="./chi-siamo.php">SCOPRICI</a>
+                        <a href="../Chi-Siamo/chi-siamo.php">SCOPRICI</a>
                     </button>
 
                     <button class="button2">
-                        <a href="./prenota.php">PRENOTA</a>
+                        <a href="../Prenota/prenota.php">PRENOTA</a>
                     </button>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     <h1>AIUTACI A FARE LA DIFFERENZA!</h1>
                     
                     <button class="button3">
-                        <a href="./chi-siamo.php">UNISCITI!</a>
+                        <a href="../Chi-Siamo/chi-siamo.php">UNISCITI!</a>
                     </button>
                 </div>
             </div>
@@ -54,26 +54,31 @@
 
                 <div class="riga">
                     <div class="contatto1" id="centralino">
-                    <i class="fa fa-phone" style="font-size: x-large"></i>
-                        <h2>Centralino</h2>
-                        <p>0420-69-90-104</p>
+                        <a href="tel:0420-69-90-104" class="fa fa-phone" style="text-align: center;">
+                            <h2>Centralino</h2>
+                            <p>0420-69-90-104</p>
+                        </a>
                     </div>
 
                     <div class="contatto2" id="e-mail">
-                        <a href="https://mail.google.com" target="_blank" class="fa fa-at" style="font-size: x-large; font-weight: bold;"></a>
-                        <h2>E-mail</h2>
-                        <p>assistenza.anziani@gmail.com</p>
+                        <a href="mailto:assistenza.anziani@gmail.com" target="_blank" class="fa fa-envelope" style="text-align: center;">
+                            <h2>E-mail</h2>
+                            <p>assistenza.anziani@gmail.com</p>
+                        </a>
                     </div>
 
-                    <div class="contatto3" id="dove_siamo">
-                        <a href="https://maps.google.com" target="_blank" class="fa fa-map" style="font-size: x-large"></a>
-                        <h2>Dove Siamo</h2>
-                        <p>Via Roma, 208</p>
+                    <div class="contatto3" id="dove-siamo">
+                        <a href="https://maps.google.com" target="_blank" class="fa fa-map" style="text-align: center;">
+                            <h2>Dove Siamo</h2>
+                            <address>Via Roma, 208</address>
+                        </a>
                     </div>
                 </div>
             </div>
+            
+            <hr class="divider">
 
-            <?php include("../footer.php"); ?>
+            <?php include("./footer.php"); ?>
         </div>
     </body>
 </html>
