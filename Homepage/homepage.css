@@ -183,9 +183,13 @@ a {
     flex: 1;
     position: relative;
     margin-top: 20%;
+    margin-bottom: 21%;
+    margin-left: 25%;
+    margin-right: 25%;
     color:black;
     font-size: 30px;
     text-align: center;
+    backdrop-filter: blur(20px);
     z-index: 1;
 }
 
