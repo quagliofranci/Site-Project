@@ -112,9 +112,10 @@ header ul li a:hover, header ul li a:focus {
     backdrop-filter: blur(10px);
     color:black;
     font-size: 30px;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 65%;
     margin-right: 5.5%;
+    margin-bottom: 10%;
     text-align: center;
     position: relative;
     justify-content: center;
@@ -180,13 +181,11 @@ a {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    position: relative;
+    margin-top: 20%;
     color:black;
     font-size: 30px;
-    margin-top: 8%;
-    margin-left: 50px;
-    margin-right: 50px;
     text-align: center;
-    position: relative;
     z-index: 1;
 }
 
