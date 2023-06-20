@@ -9,13 +9,13 @@
 }
 
 body {
-    min-height: 200vh;
+    min-height: 100%;
 }
 
 /* impostando l'immagine di sfondo in questo modo, creo l'effetto parallasse (parallax) */
 .container {
     background-image:url(../images/homepage2.jpg);
-    height: 100%;
+    height: 1000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,6 +100,7 @@ header ul li a:hover, header ul li a:focus {
 .upper {
     display: -webkit-flex;
     display: flex;
+    height: 100%;
 }
 
 .column-upper-right {
@@ -121,14 +122,14 @@ header ul li a:hover, header ul li a:focus {
     z-index: 1; /* imposta l'elemento come sottostante all'header nello stack di rendering 3d */
 }
 
+.column-upper-right h1 {
+    font-weight: bold;
+}
+
 .column-upper-right p {
     margin-top: 0; /* Rimuovi il margine superiore tra il titolo e il paragrafo */
     text-align: justify;
     font-weight: bolder;
-}
-
-.column-upper-right h1 {
-    font-weight: bold;
 }
 
 .button1, .button2 {
@@ -191,6 +192,7 @@ a {
 
 .column-central-left h1 {
     font-weight: bold;
+    margin: auto;
 }
 
 .button3 {
