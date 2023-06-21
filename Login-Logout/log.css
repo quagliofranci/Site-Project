@@ -1,7 +1,8 @@
 * {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 300;
+    font-size: 15px;
     src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +11,7 @@
 
 body {
     min-height: 100%;
+    color: #c4c3ca;
 }
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
@@ -97,23 +99,209 @@ header ul li a:hover, header ul li a:focus {
 /*
  * FORM BODY
  */
-.form-class {
-    display: -webkit-flex;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    height: 100%;
-    backdrop-filter: blur(20px);
-    color: white;
-    align-items: center;
+.row {
+    position: fixed;
     padding-top: 10%;
+    padding-left: 40%;
+    padding-right: 40%;
 }
 
-.nav {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    flex-direction: column;
+.column {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+h6 span {
+    padding: 0px 10px;
+    text-transform: uppercase; /* rendo le lettere poste sopra la checkbox maiuscole */
+    font-weight: 700;
+    color: rgb(255, 255, 130);
+}
+
+/* sposto la checkbox in un punto remoto così da eliminarla dalla vista */
+[type="checkbox"]:checked, [type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+/* blocco su cui scorre il pallino della checkbox */
+.checkbox:checked + label, .checkbox:not(:checked) + label {
+    position: relative;
+    /* "display: block" mi permette di avere l'oggetto come un blocco e su una nuova linea, così da averlo sotto le opzioni*/
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 16px;
+    border-radius: 8px;
+    margin: 10px auto;
+    cursor: pointer;
+    background-color: rgb(16, 16, 16);
+}
+
+/* pallino della checkbox che scorre sopra la linea */
+/* effetto solo visivo, in quanto il pallino è soprastante la linea nello stack 3d */
+.checkbox:checked + label:before, .checkbox:not(:checked) + label:before {
+    position: absolute;
+    /* posiziono sopra la linea */
+    top: -10px;
+    left: -10px;
+    display: block;
+    /* imposto delle misure uguali in modo da avere un quadrato */
+    width: 36px;
+    height: 36px;
+    /* impostando il raggio a 50% e avendo settato prima la figura di un quadrato, ottengo ora un cerchio "perfetto" */
+    border-radius: 50%;
+    color: black;
+    background-color: rgb(255, 255, 130);
+    content: '^'; /* contenuto del pallino, simpatico, punta all'opzione scelta */
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    transition: all 0.5s ease; /* rendo la transizione più fluida */
+}
+
+/* transizione per vedere il cambiamento del pallino */
+.checkbox:checked + label:before {
+    transform: translateX(80px); /* traslo solo sulla coordinata X in modo da avere l'effetto "pagina di libro" */
+}
+
+.form {
+    position: relative;
+    width: 450px;
+    height: 400px;
+    /* per permettere il doppio form imposto il "preserve-3d", il quale permette di avere un form in 3D e implementare altre componenti avanti e dietro */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 1000px; /* permette di avere l'effetto "hamburger" quando si switcha tra i form, plus: è carino */
+    margin-top: 50px; /* distanza dal blocco col pallino */
+}
+
+/* questa classe permette di avere un layer di separazione tra il form di login e quello di registrazione */
+.form-divider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 600ms ease-out;
+}
+
+.login-form, .register-form {
+    width: 100%;
+    height: 100%;
+    background-color: #191825;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* questa classe serve a tenere insieme i form singolarmente */
+/* per capirne il funzionamento inserire, ad esempio, la proprietà: background-color: yellow; */
+.form-wrapper {
+    position: absolute;
+    width: 100%;
+    padding: 0 35px;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 35px) perspective(100px);
+    display: block;
+}
+
+/* intestazioni del form: "Accedi" e "Registrati" */
+h4 {
+    font-weight: 600;
+    font-size: x-large;
+}
+
+/* opzioni del form, esempio: email, password */
+.form-fieldset { 
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* questa classe serve per le scritte preimpostate e per ciò che l'utente finale andrà a scrivere */
+.fieldset-style {
+    padding-left: 30px; /* distanza della scritta dal lato sinistro del box */
+    height: 50px;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 15px;
+    color: rgb(214, 214, 214);
+    background-color: #1f2029;
+    border: none;
+}
+
+/* botton di login e registrazione */
+.login-button, .register-button {  
+    border-radius: 4px;
+    height: 44px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-transition : all 200ms linear;
+    transition: all 200ms linear;
+    padding: 0 30px;
+    letter-spacing: 1px;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    text-align: center;
+    border: none;
+    background-color: rgb(255, 255, 173);
+    color: #102770;
+    box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+    cursor: pointer;
+    transition: all 200ms linear;
+    text-decoration: none;
+}
+
+.login-button:hover, .register-button:hover {
+    text-decoration: none;
+    background-color: #102770;
+    color: rgb(255, 255, 173);
+    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+
+/* scritta "Password dimenticata? */
+.forgot-psw {
+    color: white;
+    text-decoration: none;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+.forgot-psw:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+/* transizione per vedere il form di registrazione */
+.register-form {
+    transform: rotateY(180deg);
+}
+
+/* lego la transizione della rotazione del pallino a quella dell'intero form, così che scorrendo il pallino si attivi anche la rotazione del form */
+.checkbox:checked ~ .form .form-divider {
+    transform: rotateY(180deg);
 }
 
 /*

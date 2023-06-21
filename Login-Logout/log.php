@@ -13,6 +13,8 @@
         <meta name="keywords" content="Volontariato anziani assistenza"/>
         <link rel="icon" href="../images/icon.jpg" type="image/jpg"/>
         <link rel="stylesheet" type="text/css" href="./log.css"/>
+        <!-- link per scaricare i font necessari per le icone -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -21,102 +23,53 @@
             <?php include("../Homepage/header.php"); ?>
 
             <!-- Form -->
-            <div class="form-class">
-                <!-- Bottoni per scegliere tra Login e Registrati -->
-                <div class="nav">
-                    <ul>
-                        <li class="nav-item1">
-                            <a class="nav-link1" href="#">Accedi</a>
-                        </li>
+            <div class="row">
+				<div class="column">
+                    <!-- opzioni per la checkbox -->
+					<h6>
+                        <span id="accedi">Accedi</span>
+                        <span id="registrati">Registrati</span>
+                    </h6>
+			          	
+                    <!-- checkbox per switchare tra login e registrazione -->
+                    <input class="checkbox" type="checkbox" id="reg-log"/>
+                    <label for="reg-log"></label>
+						
+                    <!-- corpo del form -->
+					<div class="form">
+						<div class="form-divider">
+							<div class="login-form">
+								<div class="form-wrapper">
+									<h4>Accedi</h4></br></br>
 
-                        <li class="nav-item2">
-                            <a class="nav-link2" href="#">Registrati</a>
-                        </li>
-                    </ul>
-                </div>
+									<div class="form-fieldset">
+										<input type="email" class="fieldset-style" id="log-email" placeholder="La tua email"></br>
+										<input type="password" class="fieldset-style" id="log-psw" placeholder="La tua password"></br></br></br>
+									</div>
 
-                <div class="content">
+									<a href="#" class="login-button">Accedi</a></br></br>
 
-                    <!-- Login -->
-                    <div class="login">
-                        <form>
-                            <!-- Email input -->
-                            <div class="email">
-                                <label class="form-label" for="login-mail">E-mail: </label>
-                                <input type="email" id="login-mail"/>
-                            </div>
+                        			<p><a href="#" class="forgot-psw">Password dimenticata?</a></p>
+			      				</div>
+			      			</div>
 
-                            <!-- Password input -->
-                            <div class="password">
-                                <label class="form-label" id="login-psw">Password: </label>
-                                <input type="password" id="login-psw"/>
-                            </div>
+							<div class="register-form">
+								<div class="form-wrapper">
+									<h4>Registrati</h4></br>
 
-                            <div class="row">
-                                <div class="left-column">
-                                    <!-- Checkbox -->
-                                    <div class="checkbox">
-                                        <input type="checkbox" value="" id="login-check" checked/>
-                                        <label id="login-check">Ricordami</label>
-                                    </div>
-                                </div>
+									<div class="form-fieldset">
+										<input type="text" class="fieldset-style" id="log-name" placeholder="Il tuo nome"></br></br>
+										<input type="email" class="fieldset-style" id="log-email" placeholder="La tua email"></br>
+										<input type="password" class="fieldset-style" id="logpass" placeholder="La tua password"></br></br>
+									</div>
 
-                                <div class="right-column">
-                                    <!-- Forgot password link -->
-                                    <a href="#">Password dimenticata?</a>
-                                </div>
-                            </div>
-
-                            <!-- Login button -->
-                            <button type="submit">Accedi</button>
-                        </form>
-                    </div>
-
-                    <!-- Registrati -->
-                    <div class="registra">
-                        <form>
-                            <!-- Name input -->
-                            <div class="name">
-                                <label id="register-name">Nome: </label>
-                                <input type="text" id="register-name"/>
-                            </div>
-
-                            <!-- Username input -->
-                            <div class="username">
-                                <label id="register-uname">Username: </label>
-                                <input type="text" id="register-uname"/>
-                            </div>
-
-                            <!-- Email input -->
-                            <div class="email">
-                                <label id="register-email">E-mail: </label>
-                                <input type="email" id="register-email"/>
-                            </div>
-
-                            <!-- Password input -->
-                            <div class="password">
-                                <label id="register-psw">Password: </label>
-                                <input type="password" id="register-psw"/>
-                            </div>
-
-                            <!-- Repeat Password input -->
-                            <div class="password-ripeti">
-                                <label id="register-psw-rep">Ripeti la password: </label>
-                                <input type="password" id="register-psw-rep"/>
-                            </div>
-
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-center mb-4">
-                                <input type="checkbox" value="" id="register-check" checked/>
-                                <label id="register-check">Ho letto e accetto i termini di servizio</label>
-                            </div>
-
-                            <!-- Submit button -->
-                            <button type="submit">Registrati</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+									<a href="#" class="register-button">Registrati</a>
+				      			</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
 
             <!-- Footer -->
             <?php include("../Homepage/footer.php"); ?>
