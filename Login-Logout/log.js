@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("accedi").addEventListener("click", function() {
         var formContainer = document.querySelector(".form");
@@ -35,7 +34,6 @@ function validateForm() {
         alert("L'email inserita non è valida");
         return emailPattern.test(email);
     }
-
 
     if(password.length < 8)
     {
