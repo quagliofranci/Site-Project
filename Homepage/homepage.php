@@ -6,7 +6,7 @@
 <html lang="it">
     <head>
         <title>Sorrisi d'Argento</title>
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
         <meta name="author" content="Gruppo 53"/>
         <meta name="description" content="Un sito dedicato al volontariato verso gli anziani."/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>

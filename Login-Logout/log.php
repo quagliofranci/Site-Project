@@ -6,7 +6,7 @@
 <html lang="it">
     <head>
         <title>Sorrisi d'Argento - Auth</title>
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
         <meta name="author" content="Gruppo 53"/>
         <meta name="description" content="Pagina di autenticazione relativa al sito 'Sorrisi d'Argento'"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -38,7 +38,7 @@
 								<div class="form-wrapper">
                                     <form id="AccediForm">
                                         <div class="form-fieldset">
-                                            <input type="email" class="fieldset-style" id="log-email" placeholder="La tua email"></br>
+                                            <input type="email" class="fieldset-style" id="log-email" placeholder="La tua email"></br></br>
                                             <input type="password" class="fieldset-style" id="log-psw" placeholder="La tua password"></br></br></br>
                                         </div>
 
@@ -58,16 +58,16 @@
                                             <p style="font-size: bolder; font-weight: 500; margin-bottom: 15px;">Data di nascita</p>
                                             <input type="date" class="fieldset-style" id="reg-date" required></br></br>
                                             
-                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle" required/>
-                                            <label class="radio-btn" for="reg-male">M</label>
+                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle"/>
+                                            <label class="radio-btn" for="radiobtn">M</label>
 
-                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle" required/>
-                                            <label class="radio-btn" for="reg-female">F</label>
+                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle"/>
+                                            <label class="radio-btn" for="radiobtn">F</label>
 
-                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle" required/>
-                                            <label class="radio-btn" for="reg-neutral">Altro</label></br></br>
+                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle"/>
+                                            <label class="radio-btn" for="radiobtn">Altro</label></br></br>
                                             
-                                            <input type="email" class="fieldset-style" id="reg-email" placeholder="La tua email" required></br>
+                                            <input type="email" class="fieldset-style" id="reg-email" placeholder="La tua email" required></br></br>
                                             <input type="password" class="fieldset-style" id="reg-pass" placeholder="La tua password" required></br></br>
                                         </div>
 
