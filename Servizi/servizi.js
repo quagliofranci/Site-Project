@@ -1,27 +1,28 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// controllo per slide successiva/precedente
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// controllo per visualizzare l'immagine scelta
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+// funzione che permette di scorrere tra le foto
 function showSlides(n) {
     let i;
-    let slides = document.getElementsByClassName("mySlides");
+    let slides = document.getElementsByClassName("slide");
     let dots = document.getElementsByClassName("dot");
 
     if (n > slides.length) {
-        slideIndex = 1
+        slideIndex = 1;
     }
 
     if (n < 1) {
-        slideIndex = slides.length
+        slideIndex = slides.length;
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -29,9 +30,9 @@ function showSlides(n) {
     }
 
     for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].className = dots[i].className.replace("active", "");
     }
 
     slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    dots[slideIndex-1].className += "active";
 }

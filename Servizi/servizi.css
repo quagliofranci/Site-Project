@@ -101,7 +101,7 @@ h1 {
     font-weight: bold;
 }
 
-/* Slideshow container */
+/* slider container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
@@ -113,11 +113,11 @@ img {
 }
 
 /* Hide the images by default */
-.mySlides {
+.slide {
     display: none;
 }
 
-/* Next & previous buttons */
+/* pulsanti avanti/indietro */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -133,18 +133,17 @@ img {
     user-select: none;
 }
 
-/* Position the "next button" to the right */
+/* posizionamento del pulsante "slide successiva" sulla destra */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
-/* The dots/bullets/indicators */
+/* pallini che indicano il numero di slide */
 .dot {
     cursor: pointer;
     height: 15px;
@@ -160,7 +159,7 @@ img {
     background-color: #717171;
 }
 
-/* Fading animation */
+/* animazione di fading */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -171,6 +170,7 @@ img {
     to {opacity: 1}
 }
 
+/* responsività su schermi piccoli */
 @media only screen and (max-width: 300px) {
     .prev, .next {font-size: 11px}
 }
@@ -178,7 +178,7 @@ img {
 /*
  * FOOTER
  */
- footer {
+footer {
     position: relative;
     height: 150px;
     width: 100%;
