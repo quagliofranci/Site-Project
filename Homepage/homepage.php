@@ -13,8 +13,6 @@
         <meta name="keywords" content="Volontariato anziani assistenza"/>
         <link rel="icon" href="../images/icon.jpg" type="image/jpg"/>
         <link rel="stylesheet" type="text/css" href="./homepage.css"/>
-        <!-- link per scaricare i font necessari per le icone -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>

@@ -358,6 +358,11 @@ footer ul li a {
     transition: 0.5s;
 }
 
+footer ul li a:hover {
+    font-size: large;
+    transition: all 0.5s easy;
+}
+
 /*
  * RESPONSIVITÀ FINESTRA
  */

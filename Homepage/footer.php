@@ -1,4 +1,6 @@
 <footer>
+    <!-- link per scaricare i font necessari per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <h2>Puoi anche trovarci qui</h2>
     

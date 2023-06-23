@@ -295,3 +295,8 @@ footer ul li a {
     font-weight: bolder;
     transition: 0.5s;
 }
+
+footer ul li a:hover {
+    font-size: large;
+    transition: all 0.5s easy;
+}

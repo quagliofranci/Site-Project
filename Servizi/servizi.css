@@ -1,0 +1,226 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    color: #c4c3ca;
+}
+
+/*
+ * HEADER
+ */
+ header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    padding: 20px 100px;
+    background-color: lightskyblue;
+    z-index: 2; /* imposta l'elemento come soprastante nello stack di rendering 3d */
+}
+
+header.sticky {
+    padding: 15px 100px;
+    background: #000;
+}
+
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color:#000;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.8s ease, transform 0.8s ease;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0 30px; /*margine con il div il primo valore è il margin sul soffitto l'altro è il margin sul bordo del div destro e sinistro*/
+    text-decoration: none;
+    color:#000;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+header.sticky .logo, header.sticky ul li a {
+    color:#000
+}
+
+header .logo:hover {
+    color: blue; /* Cambio del colore al passaggio del mouse */
+    transform: scale(0.9); /* Trasformazione al passaggio del mouse */
+}
+
+header ul li a:hover, header ul li a:focus {
+    background-color: #fff;
+    color: #333;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*
+ * CENTRAL BODY
+ */
+.container {
+    align-items: center;
+}
+
+h1 {
+    padding-top: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next {font-size: 11px}
+}
+
+/*
+ * FOOTER
+ */
+ footer {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #023e8a;
+    color: white;
+    z-index: 1;
+}
+
+footer h2 {
+    margin-top: 25px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+footer ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: x-large;
+}
+
+footer ul li {
+    position: relative;
+    list-style: none;
+}
+
+footer ul li a {
+    position: relative;
+    margin: 0 30px; /*margine con il div il primo valore è il margin sul soffitto l'altro è il margin sul bordo del div destro e sinistro*/
+    text-decoration: none;
+    color:#000;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+footer ul li a:hover {
+    font-size: large;
+    transition: all 0.5s easy;
+}
