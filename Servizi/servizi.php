@@ -51,11 +51,27 @@
             <div class="descrizione-servizi">
                 <div class="row">
                     <div class="left-column">
-                        dsfsdf
+                        <h2>Compagnia</h2>
+
+                        <p>
+                            Offriamo una compagnia a chiunque, che si tratti di scambiare una chiacchierata o fare una passeggiata
+                        </p>
+                    </div>
+
+                    <div class="center-column">
+                        <h2>Commissioni</h2>
+
+                        <p>
+                            Possiamo effettuare commissioni per voi, come la spesa o il pagamento di una bolletta o simili
+                        </p>
                     </div>
 
                     <div class="right-column">
-                        sdfds
+                        <h2>Assistenza sanitaria</h2>
+
+                        <p>
+                            Offriamo anche aiuti specializzati nell'ambito medico per tutti coloro che necessitano un'assistenza medica
+                        </p>
                     </div>
                 </div>
             </div>

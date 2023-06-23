@@ -86,33 +86,35 @@ header ul li a:hover, header ul li a:focus {
     text-decoration: none;
 }
 
-/*
- * CENTRAL BODY
- */
 .container {
     align-items: center;
 }
 
-h1 {
-    padding-top: 120px;
-    text-align: center;
+.container h1 {
+    margin-top: 120px;
+    width: fit-content;
+    margin-left: 36%;
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: bold;
+    background-color: rgb(255, 255, 173);
+    border-radius: 24px;
+    color: #1f2029;
 }
+
+/*
+ * SLIDER
+ */
 
 /* slider container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
+    padding-top: 40px;
 }
 
-img {
-    vertical-align: middle;
-}
-
-/* Hide the images by default */
+/* controllo per nascondere le immagini */
 .slide {
     display: none;
 }
@@ -176,18 +178,110 @@ img {
 }
 
 /*
+ * DESCRIZIONE SERVIZI
+ */
+.row {
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.left-column {
+    display: flex;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
+    width: 30%; /* imposto la larghezza al 30% della finestra, così da poter dividere le colonne in 3 ed avere dello spazio tra esse */
+    left: 0;
+    padding-top: 5%;
+    margin: 25px;
+    color:black;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-column {
+    display: flex;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
+    width: 30%; /* imposto la larghezza al 30% della finestra, così da poter dividere le colonne in 3 ed avere dello spazio tra esse */
+    padding-top: 5%;
+    margin: 25px;
+    color:black;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-column {
+    display: flex;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
+    width: 30%; /* imposto la larghezza al 30% della finestra, così da poter dividere le colonne in 3 ed avere dello spazio tra esse */
+    right: 0;
+    padding-top: 5%;
+    margin: 25px;
+    color:black;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.row h2 {
+    font-size: 45px;
+    font-weight: bold;
+    padding: 20px;
+    border: #1f2029;
+    border-radius: 24px;
+    outline: 3px solid #1f2029;
+    background-color: #1f2029;
+    color: rgb(255, 255, 173);
+    transition: all 0.6s ease;
+}
+
+.row h2:hover {
+    font-size: 55px;
+    background-color: rgb(255, 255, 173);
+    color: #1f2029;
+    transition: all 0.6s ease;
+}
+
+.row p {
+    padding: 35px;
+    padding-bottom: 180px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/*
  * FOOTER
  */
 footer {
-    position: relative;
-    height: 150px;
+    position: static;
+    left: 0;
+    bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     background-color: #023e8a;
     color: white;
-    z-index: 1;
 }
 
 footer h2 {
