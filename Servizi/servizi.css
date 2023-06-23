@@ -17,7 +17,7 @@ body {
 /*
  * HEADER
  */
- header {
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -98,184 +98,135 @@ header ul li a:hover, header ul li a:focus {
     font-size: 70px;
     font-weight: bold;
     background-color: rgb(255, 255, 173);
-    border-radius: 24px;
+    border-radius: 10px;
+    padding: 20px;
     color: #1f2029;
-}
-
-/*
- * SLIDER
- */
-
-/* slider container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    padding-top: 40px;
-}
-
-/* controllo per nascondere le immagini */
-.slide {
-    display: none;
-}
-
-/* pulsanti avanti/indietro */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* posizionamento del pulsante "slide successiva" sulla destra */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-/* pallini che indicano il numero di slide */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-    background-color: #717171;
-}
-
-/* animazione di fading */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-/* responsività su schermi piccoli */
-@media only screen and (max-width: 300px) {
-    .prev, .next {font-size: 11px}
 }
 
 /*
  * DESCRIZIONE SERVIZI
  */
-.row {
+.row1, .row3 {
     display: -webkit-flex;
     display: flex;
-    height: 100%;
-    width: 100%;
+    height: 450px;
+    width: 90%;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
 
-.left-column {
+.row2 {
+    display: -webkit-flex;
     display: flex;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    flex-direction: column;
-    flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
-    width: 30%; /* imposto la larghezza al 30% della finestra, così da poter dividere le colonne in 3 ed avere dello spazio tra esse */
-    left: 0;
-    padding-top: 5%;
-    margin: 25px;
-    color:black;
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+    height: 450px;
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 70px;
 }
 
-.center-column {
-    display: flex;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    flex-direction: column;
-    flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
-    width: 30%; /* imposto la larghezza al 30% della finestra, così da poter dividere le colonne in 3 ed avere dello spazio tra esse */
-    padding-top: 5%;
-    margin: 25px;
-    color:black;
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+.row1 {
+    background-color: #174DB1;
+    box-shadow: 7px 7px lightcyan;
 }
 
-.right-column {
-    display: flex;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    flex-direction: column;
-    flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
-    width: 30%; /* imposto la larghezza al 30% della finestra, così da poter dividere le colonne in 3 ed avere dello spazio tra esse */
-    right: 0;
-    padding-top: 5%;
-    margin: 25px;
-    color:black;
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+.row2 {
+    background-color: #174DB1;
+    box-shadow: 7px 7px lightcyan;
 }
 
-.row h2 {
+.row3 {
+    background-color: #174DB1;
+    box-shadow: 7px 7px lightcyan;
+}
+
+.left-column1, .left-column3 {
+    text-align: right;
+}
+
+.rightcolumn2 {
+    text-align: left;
+}
+
+.row1 h2, .row3 h2 {
     font-size: 45px;
     font-weight: bold;
     padding: 20px;
     border: #1f2029;
-    border-radius: 24px;
+    border-radius: 4px;
     outline: 3px solid #1f2029;
     background-color: #1f2029;
     color: rgb(255, 255, 173);
     transition: all 0.6s ease;
 }
 
-.row h2:hover {
+.row2 h2 {
+    margin-right: -6%;
+    font-size: 45px;
+    font-weight: bold;
+    padding: 20px;
+    border: #1f2029;
+    border-radius: 4px;
+    outline: 3px solid #1f2029;
+    background-color: #1f2029;
+    color: rgb(255, 255, 173);
+    transition: all 0.6s ease;
+}
+
+.row1 h2:hover, .row2 h2:hover, .row3 h2:hover {
     font-size: 55px;
     background-color: rgb(255, 255, 173);
     color: #1f2029;
     transition: all 0.6s ease;
 }
 
-.row p {
-    padding: 35px;
-    padding-bottom: 180px;
+.row1 p, .row2 p, .row3 p {
+    padding: 80px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/*
+ * Bottone prenotazione
+ */
+.prenota {
+    position: relative;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.prenota h2 {
+    font-size: 45px;
+    font-weight: bold;
+    color: rgb(255, 255, 173);
+}
+
+.prenota button {
+    height: 60px;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 550;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(255, 255, 173);
+    color: #102770;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+
+.prenota button:hover, .prenota button:focus {
+    background-color: #1f2029;
+    color: rgb(255, 255, 173);
+    transition: all 300ms ease;
 }
 
 /*
  * FOOTER
  */
 footer {
-    position: static;
-    left: 0;
-    bottom: 0;
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;

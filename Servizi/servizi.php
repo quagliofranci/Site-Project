@@ -16,41 +16,15 @@
         <script src="./servizi.js"></script>
     </head>
 
-    <body style="background-color: #174DB1;">
+    <body style="background-color: #11009E;">
         <div class="container">
             <?php include("../Homepage/header.php"); ?>
 
             <h1>I nostri servizi</h1>
 
-            <div class="slideshow-container">
-
-                <div class="slide fade">
-                    <img src="../images/servizi.jpg" style="width:100%">
-                </div>
-
-                <div class="slide fade">
-                    <img src="../images/servizi2.jpg" style="width:100%">
-                </div>
-
-                <div class="slide fade">
-                    <img src="../images/homepage2.jpg" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-
-            </div>
-            <br>
-
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
             <div class="descrizione-servizi">
-                <div class="row">
-                    <div class="left-column">
+                <div class="row1">
+                    <div class="left-column1">
                         <h2>Compagnia</h2>
 
                         <p>
@@ -58,22 +32,50 @@
                         </p>
                     </div>
 
-                    <div class="center-column">
+                    <div class="right-column1">
+                        <img src="../images/servizi2.jpg" style="max-width: 500px; max-height: 500px;"/>
+                    </div>
+                </div>
+
+                <div class="row2">
+                    <div class="left-column2">
+                        <img src="../images/image.png" style="max-width: 500px; max-height: 500px;"/>
+                    </div>
+
+                    <div class="right-column2">
                         <h2>Commissioni</h2>
 
                         <p>
                             Possiamo effettuare commissioni per voi, come la spesa o il pagamento di una bolletta o simili
                         </p>
                     </div>
-
-                    <div class="right-column">
+                </div>
+                
+                <div class="row3">
+                    <div class="left-column3">
                         <h2>Assistenza sanitaria</h2>
 
                         <p>
                             Offriamo anche aiuti specializzati nell'ambito medico per tutti coloro che necessitano un'assistenza medica
                         </p>
                     </div>
+
+                    <div class="right-column3">
+                        <img src="../images/servizi.jpg" style="max-width: 500px; max-height: 500px;"/>
+                    </div>
                 </div>
+            </div>
+
+            <div class="prenota">
+                <h2>
+                    Vuoi prenotare un nostro servizio?</br>
+                
+                    Clicca qui!</br>
+
+                    <i class="fa fa-arrow-down"></i>
+                </h2>
+
+                <a href="../Prenota/prenota.php"><button class="prenota-btn">Prenota</button></a>
             </div>
 
             <?php include("../Homepage/footer.php"); ?>
