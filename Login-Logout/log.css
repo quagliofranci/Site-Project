@@ -41,6 +41,11 @@ header {
     z-index: 2; /* imposta l'elemento come soprastante nello stack di rendering 3d */
 }
 
+#chi-siamo{
+    cursor: help;
+}
+
+
 header.sticky {
     padding: 15px 100px;
     background: #000;

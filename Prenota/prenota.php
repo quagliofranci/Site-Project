@@ -25,13 +25,13 @@
                 <div class="prenota-form">
                     <form id="PrenotaForm" onsubmit="return validateForm();">
                         <div class="form-fieldset">
-                            <!-- Nome -->
-                            <input type="text" class="fieldset" id="name" placeholder="Il tuo nome" required></br></br>
-                            <!-- Cognome -->
-                            <input type="text" class="fieldset" id="surname" placeholder="Il tuo cognome" required></br></br>
+                            <!-- Città -->
+                            <input type="text" class="fieldset" id="city" placeholder="La tua città" required></br></br>
+                            <!-- Cap -->
+                            <input type="number" class="fieldset" id="cap" pattern = "[0-9]"  placeholder="CAP" required></br></br>
                             
                             <!-- Indirizzo -->
-                            <input type="text" class="fieldset" id="address" placeholder="Il tuo indirizzo" required></br></br>
+                            <input type="text" class="fieldset" id="address"  placeholder="Il tuo indirizzo" required></br></br>
                             
                             <!-- Cellulare -->
                             <!-- Il pattern inserito impedisce di inserire numeri che siano diversi dal formato scelto -->
