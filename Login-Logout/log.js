@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function validateForm() {
-
     var nome = document.getElementById("reg-name").value;
     var cognome = document.getElementById("reg-surname").value;
     var email = document.getElementById("reg-email").value;
