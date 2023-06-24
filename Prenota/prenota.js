@@ -1,18 +1,18 @@
 function validateForm() {
 
-    var nome = document.getElementById("name").value;
-    var cognome = document.getElementById("surname").value;
+    var city = document.getElementById("city").value;
+    var cap = document.getElementById("cap").value;
     var indirizzo = document.getElementById("address").value;
     
-    if(nome.length < 2)
+    if(city.length < 2)
     {
-        alert("Il campo 'Nome' deve contenere almeno 2 caratteri");
+        alert("Il campo 'città' deve contenere almeno 2 caratteri");
         return false;
     }
 
-    if(cognome.length < 3)
+    if(cap.length < 5)
     {
-        alert("Il campo 'Cognome' deve contenere almeno 3 caratteri");
+        alert("Il campo 'Cap' deve contenere 5 numeri");
         return false;
     }
 
