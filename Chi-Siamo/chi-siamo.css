@@ -12,7 +12,6 @@
 body {
     min-height: 100%;
     color: #c4c3ca;
-    
 }
 
 .container {
@@ -242,7 +241,7 @@ header ul li a:hover, header ul li a:focus {
 /*
  * FOOTER
  */
- footer {
+footer {
     position: fixed;
     left: 0;
     bottom: 0;

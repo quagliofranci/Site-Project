@@ -36,19 +36,13 @@
                     <div class="operatore">
                         <img src="../images/chi-siamo-matteo.jpg" style="width: 250px; height: 250px; border: none; border-radius: 50%;"/>
                         <p>Matteo</p>
-                    </div>
-
-                    <div class="operatore">
+                        
                         <img src="../images/chi-siamo-riccardo.jpg" style="width: 250px; height: 250px; border: none; border-radius: 50%;"/>
                         <p>Riccardo</p>
-                    </div>
 
-                    <div class="operatore">
                         <img src="../images/chi-siamo-emo.jpg" style="width: 250px; height: 250px; border: none; border-radius: 50%;"/>
                         <p>Emanuele</p>
-                    </div>
 
-                    <div class="operatore">
                         <img src="../images/chi-siamo-quaglio.jpg" style="width: 250px; height: 250px; border: none; border-radius: 50%;"/>
                         <p>Francesco</p>
                     </div>
