@@ -15,6 +15,15 @@ body {
     
 }
 
+.container {
+    align-items: center;
+    height: 2000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*
  * HEADER
  */
@@ -94,15 +103,6 @@ header ul li a:hover, header ul li a:focus {
 /*
  * CENTRAL BODY
  */
-.container {
-    align-items: center;
-    height: 2000px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .container h1 {
     margin-top: 90px;
     width: fit-content;
