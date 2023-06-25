@@ -12,10 +12,16 @@
 body {
     min-height: 100%;
     color: #c4c3ca;
+    
 }
 
 .container {
     align-items: center;
+    height: 2000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*
@@ -115,8 +121,8 @@ header ul li a:hover, header ul li a:focus {
     margin-top: 5px;
     height: 110px;
     width: 100%;
-    margin-left: auto;
-    margin-right:auto;
+    margin-left: 30px auto;
+    margin-right: 30px auto;
     text-align: justify;
     background-color: #174DB1;
     color: #fff;
@@ -130,18 +136,107 @@ header ul li a:hover, header ul li a:focus {
     font-weight: 400;
 }
 
-.row2 h2 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.row1 p strong, .row1 p u {
+    font-size: 20px;
+}
+
+.row2, .row3{
     text-align: center;
+    margin-top: 15px;
+}
+
+.row2 h2, .row3 h2 {
+    padding: 20px;
     font-size: 30px;
     font-weight: 600;
     background-color: #1f2029;
     color: rgb(255, 255, 173);
-    text-align: center;
-    margin-top: 10px;
+    display: inline-block;
+    margin: 0 auto;
     border: none;
     border-radius: 12px;
+}
+
+.foto-operatori {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.operatore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.operatore p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.row3 form {
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    width: 500px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    background-color: #191825;
+    border: none;
+    border-radius: 24px;
+}
+
+.fieldset {
+    padding-left: 30px;
+    height: 50px;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 15px;
+    color: rgb(214, 214, 214);
+    background-color: #1f2029;
+    border: none;
+}
+
+.checkbox, .checkbox label {
+    font-size: 14px;
+}
+
+.form-fieldset p {
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.candidati-btn {
+    height: 44px;
+    font-size: 15px;
+    font-weight: 550;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0 30px;
+    border-radius: 24px;
+    border: none;
+    background-color: rgb(255, 255, 173);
+    color: #102770;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+
+.candidati-btn:hover {
+    text-decoration: none;
+    background-color: #102770;
+    color: rgb(255, 255, 173);
+    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 
 /*
@@ -151,7 +246,7 @@ header ul li a:hover, header ul li a:focus {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 140px;
+    height: 120px;
     width: 100%;
     display: flex;
     flex-direction: column;
