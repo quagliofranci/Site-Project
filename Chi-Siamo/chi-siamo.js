@@ -1,5 +1,4 @@
 function validateForm() {
-
     var nome = document.getElementById("nome").value;
     var cognome = document.getElementById("cognome").value;
     var eta = document.getElementById("eta").value;
@@ -11,7 +10,6 @@ function validateForm() {
     var venerdi = document.getElementById("venerdi");
     var sabato = document.getElementById("sabato");
     var domenica = document.getElementById("domenica");
-
     
     if(nome.length < 3) {
         alert("Il 'Nome' deve contenere almeno 3 caratteri");

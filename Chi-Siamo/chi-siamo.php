@@ -67,7 +67,7 @@
                         <input type="text" class="fieldset" id="cognome" placeholder="Il tuo cognome" required></br></br>
                             
                         <!-- Età -->
-                        <input type="number" class="fieldset" id="eta" placeholder="La tua età" required></br></br>
+                        <input type="number" min="0" class="fieldset" id="eta" placeholder="La tua età" required></br></br>
                             
                         <!-- Indirizzo email -->
                         <input type="email" class="fieldset" id="email" placeholder="Il tuo indirizzo email" required></br></br>

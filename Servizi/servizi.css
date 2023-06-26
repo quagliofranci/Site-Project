@@ -191,7 +191,7 @@ header ul li a:hover, header ul li a:focus {
 }
 
 /*
- * Bottone prenotazione
+ * BOTTONE PRENOTAZIONE
  */
 .prenota {
     position: relative;
@@ -263,7 +263,7 @@ footer ul li {
 
 footer ul li a {
     position: relative;
-    margin: 0 30px; /*margine con il div il primo valore è il margin sul soffitto l'altro è il margin sul bordo del div destro e sinistro*/
+    margin: 0 30px; /*margine con il div, il primo valore è il margin sul soffitto, l'altro è il margin sul bordo del div destro e sinistro*/
     text-decoration: none;
     color:#000;
     letter-spacing: 2px;
