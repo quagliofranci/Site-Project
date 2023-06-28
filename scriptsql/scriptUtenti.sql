@@ -20,8 +20,8 @@ INSERT INTO Utente (nome, cognome,nascita, sesso, email, password)
 
 
 -- Concedi tutti i privilegi all'utente www
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO www; 
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO www;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres; 
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO postgres;
 
 
 --visualizzo la tabella 

@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function validateForm() {
-    var nome = document.getElementById("reg-name").value;
-    var cognome = document.getElementById("reg-surname").value;
-    var email = document.getElementById("reg-email").value;
-    var password = document.getElementById("reg-pass").value;
+    var nome = document.getElementById("name").value;
+    var cognome = document.getElementById("surname").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("pass").value;
 
     if(nome.length < 2)
     {
@@ -27,13 +27,13 @@ function validateForm() {
         alert("Il campo 'Cognome' deve contenere almeno 3 caratteri");
         return false;
     }
-
+    
     function validateEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
         alert("L'email inserita non è valida");
         return emailPattern.test(email);
     }
-
+    
     if(password.length < 8)
     {
         alert("Il campo 'password' deve contenere almeno 8 caratteri");

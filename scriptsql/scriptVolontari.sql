@@ -4,7 +4,7 @@ CREATE TABLE Volontari(
     nome VARCHAR(20) NOT NULL,
     cognome VARCHAR(30) NOT NULL,
     età INTEGER NOT NULL,
-    mail VARCHAR(30) PRIMARY KEY,
+    email VARCHAR(30) PRIMARY KEY,
     città VARCHAR(20) NOT NULL,
     telefono BIGINT NOT NULL,
     disponibilità VARCHAR NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE Volontari(
 );
 
 
-INSERT INTO Volontari (nome, cognome, età, mail, città, telefono, Disponibilità, descrizione)
+INSERT INTO Volontari (nome, cognome, età, email, città, telefono, Disponibilità, descrizione)
 VALUES
     ('Mario', 'Rossi', 25, 'mario.rossi@gmail.com', 'Roma', 1234567890, 'Lunedì', 'Descrizione volontario 1'),
     ('Giulia', 'Bianchi', 30, 'giulia.bianchi@gmail.com', 'Milano', 9876543210, 'Martedì', 'Descrizione volontario 2'),

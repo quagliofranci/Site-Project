@@ -48,8 +48,7 @@
                                     <option value="3">Matteo</option>
                                     <option value="4">Riccardo</option>
                                 </select>
-                            <!--Manca la data -->
-                            
+                          
                                 <!-- Question mark che reindirizza a "Chi Siamo" per far vedere i volontari -->
                                 <a href="../Chi-Siamo/chi-siamo.php" target="_blank"><i class="fa fa-question-circle" style="color: rgb(255, 255, 175)"></i></a>
                             </div>
@@ -68,8 +67,9 @@
 
                             <!-- Note sul servizio -->
                             <p for="descr">Descrizione della richiesta:</p></br>
-                            <input type="text" class="fieldset" id="descr" placeholder="Aggiungi una descrizione sul servizio richiesto"></br></br>
-                            
+                            <input type="text" class="fieldset" id="descr" placeholder="Aggiungi una descrizione sul servizio richiesto"></br>
+                          <!--Manca la data -->
+                          <p style="margin-top:15px;"><label style="margin-left:13%;" for="data">Data:<input type="datetime-local" min = "" id="data" name="data" required/></label></p>   
                         </div>
 
                         <input type="submit" class="prenota-btn" name="PrenotaButton" value="Prenota">
