@@ -56,7 +56,7 @@
                                             <input type="text" class="fieldset-style" id="surname" placeholder="Il tuo cognome" name="surname" required></br></br>
                                             
                                             <p style="font-size: bolder; font-weight: 500; margin-bottom: 15px;">Data di nascita</p>
-                                            <input type="date" class="fieldset-style" id="date" name="date" required></br></br>
+                                            <input type="date" class="fieldset-style" id="date" name="date" min="" required></br></br>
                                             
                                             <input type="radio" class="radio-btn" id="radiobtn" name="sex" value="M" style="vertical-align: middle"/>
                                             <label class="radio-btn" for="radiobtn">M</label>
