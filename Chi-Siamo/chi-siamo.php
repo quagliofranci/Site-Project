@@ -83,25 +83,25 @@
                         <p for="descr">Disponibilit&agrave giorni:</p></br>
                         
                         <div class="giorni" required>
-                            <input type="checkbox" id="lunedi">
+                            <input type="radio" name="giorno" id="lunedi" value="lunedì">
                             <label for="lunedi">Lun</label> &nbsp
 
-                            <input type="checkbox" id="martedi">
+                            <input type="radio" name="giorno" id="martedi" value="martedi">
                             <label for="martedi">Mar</label> &nbsp
 
-                            <input type="checkbox" id="mercoledi">
+                            <input type="radio" name="giorno" id="mercoledi" value="mercoledi">
                             <label for="mercoledi">Mer</label> &nbsp
 
-                            <input type="checkbox" id="giovedi">
+                            <input type="radio" name="giorno" id="giovedi" value="giovedi">
                             <label for="giovedi">Gio</label> &nbsp
 
-                            <input type="checkbox" id="venerdi">
+                            <input type="radio" name="giorno" id="venerdi" value="venerdi">
                             <label for="venerdi">Ven</label> &nbsp
 
-                            <input type="checkbox" id="sabato">
+                            <input type="radio" name="giorno" id="sabato" value="sabato">
                             <label for="sabato">Sab</label> &nbsp
 
-                            <input type="checkbox" id="domenica">
+                            <input type="radio" name="giorno" id="domenica" value="domenica">
                             <label for="domenica">Dom</label>
                         </div>
 

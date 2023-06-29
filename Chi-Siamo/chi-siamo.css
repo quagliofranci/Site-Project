@@ -207,8 +207,8 @@ header ul li a:hover, header ul li a:focus {
     border: none;
 }
 
-.checkbox, .checkbox label {
-    font-size: 14px;
+.radio, .radio label {
+    font-size: 16px;
 }
 
 .form-fieldset p {
