@@ -6,10 +6,10 @@ CREATE TABLE utente (
     nascita DATE NOT NULL,
     sesso VARCHAR NOT NULL,
     email VARCHAR(50) PRIMARY KEY,
-    password VARCHAR NOT NULL
+    pass VARCHAR(100) NOT NULL
 );
 
-INSERT INTO utente (nome, cognome,nascita, sesso, email, password)
+INSERT INTO utente (nome, cognome,nascita, sesso, email, pass)
 	VALUES
 		('Giovanni', 'Renzullo', '2001-06-09', 'altro', 'giovannirenzullo@gmail.com', 'Fy$3r#p@ssW0rd'),
 		('Ettore', 'Fumagalli', '2003-01-02', 'M', 'ettorefumagalli@gmail.com', 'S#k8r@t3C0d3!'),
