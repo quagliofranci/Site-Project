@@ -2,7 +2,7 @@
 	$host = 'localhost';
 	$db = 'TSW';
 	$port='5432';
-	$username = 'postgres';
+	$username = 'www';
 	$password = 'tsw2023';
 	$connection_string = "host=$host port=$port dbname=$db user=$username password=$password";
 
