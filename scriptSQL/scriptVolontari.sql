@@ -17,9 +17,9 @@ INSERT INTO Volontari (nome, cognome, età, email, città, telefono, Disponibili
         ('Giulia', 'Bianchi', 30, 'giulia.bianchi@gmail.com', 'Milano', 9876543210, 'Martedì', 'Descrizione volontario 2'),
         ('Luca', 'Verdi', 28, 'luca.verdi@gmail.com', 'Napoli', 4567890123, 'Mercoledì', 'Descrizione volontario 3');
 
--- Concedi tutti i privilegi all'utente postgres
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres; 
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO postgres;
+-- Concedi tutti i privilegi all'utente www
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO www;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO www;
 
---visualizzo la tabella 
+-- Visualizzo la tabella
 SELECT * from Volontari;

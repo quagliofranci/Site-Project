@@ -17,8 +17,8 @@ INSERT INTO utente (nome, cognome,nascita, sesso, email, pass)
 		('Vincenzo', 'Petricchione', '2004-04-25', 'M', 'vincenzopetricchione@gmail.com', 'P3r$3cR3tP@ss!');
 
 -- Concedi tutti i privilegi all'utente www
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres; 
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO postgres;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO www;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO www;
 
---visualizzo la tabella 
+-- Visualizzo la tabella
 SELECT * from utente;
