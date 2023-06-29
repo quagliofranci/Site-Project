@@ -53,6 +53,12 @@
                                 <a href="../Chi-Siamo/chi-siamo.php" target="_blank"><i class="fa fa-question-circle" style="color: rgb(255, 255, 175)"></i></a>
                             </div>
 
+                            <!-- Data -->
+                            <div class="data-prenotazione">
+                                <label style="margin-right: 20%;" for="data">Data: </label>
+                                <input type="datetime-local" min="" id="data" name="data" required/>
+                            </div> 
+
                             <!-- Servizi -->
                             </br><p>Scegli il servizio di cui vuoi usufruire:</p></br>
 

@@ -58,7 +58,7 @@ header .logo {
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: color 0.8s ease, transform 0.8s ease;
+    transition: color 0.8s easestyle="margin-top: 15px;", transform 0.8s ease;
 }
 
 header ul {
@@ -121,11 +121,6 @@ header ul li a:hover, header ul li a:focus {
     background-color: #191825;
 }
 
-.form-fieldset {
-    position: relative;
-    display: block;
-}
-
 .fieldset {
     padding-left: 30px;
     height: 50px;
@@ -150,10 +145,20 @@ header ul li a:hover, header ul li a:focus {
     font-size: 20px;
 }
 
-p {
+.data-prenotazione {
+    margin-top: 30px;
+}
+
+.data-prenotazione label {
+    position: relative;
     font-size: 15px;
     font-weight: 600;
-    padding-top: 20px;
+}
+
+.form-fieldset p {
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 10px;
 }
 
 .radio-btn {
