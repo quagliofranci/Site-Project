@@ -83,26 +83,26 @@
                         <p for="descr">Disponibilit&agrave giorni:</p></br>
                         
                         <div class="giorni" required>
-                            <input type="radio" name="giorno" id="lunedi" value="lunedì">
-                            <label for="lunedi">Lun</label> &nbsp
+                            <input type="radio" name="lunedi" id="lunedi" value="lunedì">
+                            <label for="lunedi" style="font-size: 16px; padding-left: 5px;">Lun</label> &nbsp
 
-                            <input type="radio" name="giorno" id="martedi" value="martedi">
-                            <label for="martedi">Mar</label> &nbsp
+                            <input type="radio" name="martedi" id="martedi" value="martedi">
+                            <label for="martedi" style="font-size: 16px; padding-left: 5px;">Mar</label> &nbsp
 
-                            <input type="radio" name="giorno" id="mercoledi" value="mercoledi">
-                            <label for="mercoledi">Mer</label> &nbsp
+                            <input type="radio" name="mercoledi" id="mercoledi" value="mercoledi">
+                            <label for="mercoledi" style="font-size: 16px; padding-left: 5px;">Mer</label> &nbsp
 
-                            <input type="radio" name="giorno" id="giovedi" value="giovedi">
-                            <label for="giovedi">Gio</label> &nbsp
+                            <input type="radio" name="giovedi" id="giovedi" value="giovedi">
+                            <label for="giovedi" style="font-size: 16px; padding-left: 5px;">Gio</label> &nbsp
 
-                            <input type="radio" name="giorno" id="venerdi" value="venerdi">
-                            <label for="venerdi">Ven</label> &nbsp
+                            <input type="radio" name="venerdi" id="venerdi" value="venerdi">
+                            <label for="venerdi" style="font-size: 16px; padding-left: 5px;">Ven</label> &nbsp
 
-                            <input type="radio" name="giorno" id="sabato" value="sabato">
-                            <label for="sabato">Sab</label> &nbsp
+                            <input type="radio" name="sabato" id="sabato" value="sabato">
+                            <label for="sabato" style="font-size: 16px; padding-left: 5px;">Sab</label> &nbsp
 
-                            <input type="radio" name="giorno" id="domenica" value="domenica">
-                            <label for="domenica">Dom</label>
+                            <input type="radio" name="domenica" id="domenica" value="domenica">
+                            <label for="domenica" style="font-size: 16px; padding-left: 5px;">Dom</label>
                         </div>
 
                         <!-- Note sul servizio -->
