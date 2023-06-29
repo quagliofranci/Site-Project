@@ -80,6 +80,71 @@
 		      	</div>
 	      	</div>
 
+            <?php 
+                 if ($_SERVER["REQUEST_METHOD"] == "POST" ) {    
+                    if (isset($_POST["RegistratiButton"])) {
+                        include("logindatab.php");
+
+
+                        $name = $_POST["name"];
+                        $surname = $_POST["surname"]; 
+                        $birthdate = $_POST["date"];
+                        $sesso = $_POST["sex"];
+                        $email = $_POST["email"];
+                        $pass = $_POST["pass"];
+                        $hash = password_hash($pass, PASSWORD_DEFAULT);
+
+                        $query = "INSERT INTO Utente (nome, cognome, nascita, sesso, email, password)
+                        VALUES ('$name', '$surname', '$birthdate','$sesso', '$email', '$hash');" ; 
+
+                        $result= pg_query($db,$query);
+                        
+                        if($result){
+                            echo '<script type="text/javascript">';
+                            echo 'alert("Registrazione avvenuta con successo!");';
+                            echo '</script>';
+                            pg_close($db);
+                          }else{
+                            echo '<script type="text/javascript">';
+                            echo 'alert(" Utente è gia registrato! Si prega di effettuare il login");';
+                            echo '</script>';
+                            pg_close($db);
+                          }
+                  
+                    }
+                        else if (isset($_POST["AccediButton"])) {
+                            include("logindatab.php");
+
+                            $email = trim($_POST["email"]); 
+                            $pass =  trim($_POST["pass"]); 
+                    
+                            $query = "SELECT nome, email, password FROM Utente WHERE email = '$email';";
+                    
+                            $result2= pg_query($db,$query); 
+                    
+                            $row= pg_fetch_assoc($result2);
+                    
+                            $hash = $row['pass'];
+
+                            
+                    
+                            if (!password_verify($pass, $hash)) {
+                              echo '<script type="text/javascript">';
+                              echo "alert('L''email o la password inserite non sono corrette, si prega di riprovare ;)');";
+                              echo '</script>'; 
+                              pg_close($db);
+                            } else {
+                              $_SESSION['name'] = $row[0];
+                              $_SESSION['isLoggedIn'] = true;
+                              $_SESSION['email'] = $row[1];
+                              pg_close($db);
+                             
+                            }      
+                          } 
+
+                        }
+            ?>
+
             <!-- Footer -->
             <?php include("../Homepage/footer.php"); ?>
         </div>
