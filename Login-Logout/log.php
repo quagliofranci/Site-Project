@@ -81,12 +81,12 @@
 	      	</div>
 
             <?php 
-                if($_SERVER["REQUEST_METHOD"] == "POST") {    
+                if($_SERVER["REQUEST_METHOD"] == "POST") {
                     if(isset($_POST["RegistratiButton"])) {
                         include("logdb.php");
 
                         $name = trim($_POST["name"]);
-                        $surname = trim($_POST["surname"]); 
+                        $surname = trim($_POST["surname"]);
                         $birthdate = $_POST["date"];
                         $sesso = $_POST["sex"];
                         $email = trim($_POST["email"]);
