@@ -94,6 +94,9 @@ header ul li a:hover, header ul li a:focus {
     align-items: center;
 }
 
+/*
+ * DESCRIZIONE SERVIZI
+ */
 .container h1 {
     margin-top: 120px;
     width: fit-content;
@@ -108,9 +111,6 @@ header ul li a:hover, header ul li a:focus {
     color: #1f2029;
 }
 
-/*
- * DESCRIZIONE SERVIZI
- */
 .row1, .row3 {
     display: -webkit-flex;
     display: flex;
@@ -129,17 +129,7 @@ header ul li a:hover, header ul li a:focus {
     margin-top: 70px;
 }
 
-.row1 {
-    background-color: #174DB1;
-    box-shadow: 7px 7px lightcyan;
-}
-
-.row2 {
-    background-color: #174DB1;
-    box-shadow: 7px 7px lightcyan;
-}
-
-.row3 {
+.row1, .row2, .row3 {
     background-color: #174DB1;
     box-shadow: 7px 7px lightcyan;
 }
@@ -188,6 +178,11 @@ header ul li a:hover, header ul li a:focus {
     padding: 80px;
     font-size: 25px;
     font-weight: 500;
+}
+
+.right-column1 img, .right-column3 img, .left-column2 img {
+    max-height: 500px;
+    max-width: 500px;
 }
 
 /*
@@ -273,4 +268,66 @@ footer ul li a {
 footer ul li a:hover {
     font-size: large;
     transition: all 0.5s easy;
+}
+
+/*
+ * RESPONSIVITÀ FINESTRA
+ */
+@media screen and (max-width: 1000px) {
+    /*
+     * HEADER
+     */
+    header {
+        padding: 60px 50px;
+        flex-direction: column;
+        align-items: flex-start; /* Allinea i contenuti a sinistra */
+    }
+ 
+    header .logo {
+        margin-bottom: 20px;
+        direction: initial;
+    }
+ 
+    header ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Allinea i link a destra */
+    }
+
+    header ul li {
+        margin-bottom: 10px;
+    }
+ 
+    header ul li a {
+        margin: 0;
+    }
+
+    /*
+     * DESCRIZIONE SERVIZI
+     */
+    .container h1 {
+        margin-top: 50%;
+    }
+
+    .row1, .row2 {
+        height: 360px;
+    }
+
+    .row3 {
+        height: 420px;
+    }
+
+    .row2 h2 {
+        margin-right: 0;
+    }
+
+    .row1 p, .row2 p, .row3 p {
+        padding: 30px;
+        font-size: 24px;
+    }
+
+    .right-column1 img, .right-column3 img, .left-column2 img {
+        max-height: 300px;
+        max-width: 300px;
+    }
 }
