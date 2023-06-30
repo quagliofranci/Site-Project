@@ -134,6 +134,7 @@
                             $_SESSION['isLoggedIn'] = true;
                             $_SESSION['email'] = $row[1];
                             pg_close($db);
+                            header("Location: ../Homepage/homepage.php");
                         }
                     }
                 }
