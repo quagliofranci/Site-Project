@@ -97,7 +97,7 @@
                         $query = "INSERT INTO Utente (nome, cognome, nascita, sesso, email, pass)
                         VALUES ($1, $2, $3, $4, $5, $6);";
 
-                        $result = pg_query($db, $query, array($name, $surname, $birthdate, $sesso, $email, $email, $hash));
+                        $result = pg_query_params($db, $query, array($name, $surname, $birthdate, $sesso, $email, $hash));
                         
                         if($result) {
                             echo '<script type="text/javascript">';

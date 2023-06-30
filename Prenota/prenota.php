@@ -102,7 +102,7 @@
                         $query = "INSERT INTO prenota (email, città, cap, indirizzo, cellulare, volontario, servizio, desc_servizio, datas)
                         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";
 
-                        $result = pg_query($db, $query, array($email, $citta, $cap, $indirizzo, $cell, $volontario, $servizio, $desc, $data));
+                        $result = pg_query_params($db, $query, array($email, $citta, $cap, $indirizzo, $cell, $volontario, $servizio, $desc, $data));
                         
                         if($result) {
                             echo '<script type="text/javascript">';
