@@ -69,7 +69,6 @@
             <div class="prenota">
                 <h2>
                     Vuoi prenotare un nostro servizio?</br>
-                
                     Clicca qui!</br>
 
                     <i class="fa fa-arrow-down"></i>

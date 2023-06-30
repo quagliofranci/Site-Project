@@ -16,7 +16,7 @@ body {
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
-    background-image:url(../images/form.jpg);
+    background-image: url(../images/form.jpg);
     height: 1000px;
     background-attachment: fixed;
     background-position: center;
@@ -106,8 +106,10 @@ header ul li a:hover, header ul li a:focus {
 .row {
     position: relative;
     padding-top: 7%;
-    padding-left: 38%;
+    padding-left: 35%;
     padding-right: 40%;
+    align-items: center;
+    text-align: center;
 }
 
 .column {
@@ -115,6 +117,10 @@ header ul li a:hover, header ul li a:focus {
     position: relative;
     width: 100%;
     display: block;
+}
+
+.column h6 {
+    width: 500px;
 }
 
 .login-btn, .reg-btn {
@@ -125,8 +131,7 @@ header ul li a:hover, header ul li a:focus {
     color: rgb(255, 255, 130);
     padding: 10px auto;
     border-radius: 12px;
-    margin: 10px auto;
-    margin-left: 40px;
+    margin: 20px auto;
     font-size: 20px;
     font-weight: 600;
     padding-top: 10px;
@@ -260,7 +265,7 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 130px;
+    height: 140px;
     width: 100%;
     display: flex;
     flex-direction: column;

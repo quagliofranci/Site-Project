@@ -14,7 +14,7 @@ body {
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
-    background-image:url(../images/homepage2.jpg);
+    background-image: url(../images/homepage2.jpg);
     height: 1000px;
     background-attachment: fixed;
     background-position: center;
@@ -114,12 +114,14 @@ header ul li a:hover, header ul li a:focus {
     flex: 1;
     flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
     color:black;
     font-size: 30px;
     margin-top: 10%;
     margin-left: 65%;
     margin-right: 5.5%;
     margin-bottom: 10%;
+    padding: 20px;
     text-align: center;
     position: relative;
     justify-content: center;
@@ -187,7 +189,7 @@ header ul li a:hover, header ul li a:focus {
     flex: 1;
     position: relative;
     margin-top: 20%;
-    margin-bottom: 21%;
+    margin-bottom: 25%;
     margin-left: 25%;
     margin-right: 25%;
     color:black;

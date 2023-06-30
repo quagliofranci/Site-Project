@@ -16,8 +16,8 @@ body {
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
-    background-image:url(../images/form.jpg);
-    height: 950px;
+    background-image: url(../images/form.jpg);
+    height: 1100px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@ header ul li a:hover, header ul li a:focus {
     position: relative;
     display: grid;
     gap: 50px;
-    padding-top: 5.25%;
+    padding-top: 130px;
     place-items: center;
 }
 
