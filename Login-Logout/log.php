@@ -50,7 +50,7 @@
                             <!-- corpo del form di registrazione -->
 							<div class="register-form">
 								<div class="form-wrapper">
-                                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>" id="RegisterForm" onsubmit="return validateForm();" >
+                                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>" id="RegisterForm" onsubmit="return validateForm();">
                                         <div class="form-fieldset">
                                             <input type="text" class="fieldset-style" id="name" placeholder="Il tuo nome" name="name" required></br></br>
                                             <input type="text" class="fieldset-style" id="surname" placeholder="Il tuo cognome" name="surname" required></br></br>
