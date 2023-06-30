@@ -93,10 +93,11 @@
                         $pass = trim($_POST["pass"]);
                         $hash = password_hash($pass, PASSWORD_DEFAULT);
 
+                        // Prepared statement per evitare SQL-Injection
                         $query = "INSERT INTO Utente (nome, cognome, nascita, sesso, email, pass)
-                        VALUES ('$name', '$surname', '$birthdate', '$sesso', '$email', '$hash');";
+                        VALUES ($1, $2, $3, $4, $5, $6);";
 
-                        $result = pg_query($db, $query);
+                        $result = pg_query($db, $query, array($name, $surname, $birthdate, $sesso, $email, $email, $hash));
                         
                         if($result) {
                             echo '<script type="text/javascript">';
