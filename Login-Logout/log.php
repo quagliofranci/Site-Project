@@ -134,7 +134,11 @@
                             $_SESSION['isLoggedIn'] = true;
                             $_SESSION['email'] = $row[1];
                             pg_close($db);
-                            header("Location: ../Homepage/homepage.php");
+                            // Script per ricaricare la pagina col nuovo header post login
+                            echo '<script type="text/javascript">';
+                            echo 'window.location.href = "../Homepage/homepage.php";';
+                            echo '</script>';
+                            exit;
                         }
                     }
                 }
