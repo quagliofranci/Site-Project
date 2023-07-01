@@ -25,7 +25,7 @@
                 }
                 else{
                     echo '<script type="text/javascript">';
-                    echo 'alert("Per poter accedere a questa pagina devi effettuare prima il Log In!");';
+                    echo 'alert("Per poter accedere a questa pagina devi effettuare prima l\'accesso!");';
                     echo 'window.location.href = "../Login-Logout/log.php";';
                     echo '</script>';
                 }
