@@ -1,3 +1,7 @@
+<?php
+    include("../aggiorna-cookie.php");
+?>
+
 <footer>
     <!-- link per scaricare i font necessari per le icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,11 +14,4 @@
         <li><a href="https://www.youtube.com/" target="_blank" class="fa fa-youtube" style="color: white;"></a></li>
         <li><a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin" style="color: white;"></a></li>
     </ul>
-
-    <?php
-        if(isset($_COOKIE['visita_attuale'])) {
-            $visita_attuale = $_COOKIE['visita_attuale'];
-            echo $visita_attuale;
-        }
-    ?>
 </footer>

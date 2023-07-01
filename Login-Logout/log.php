@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../elimina-cookie.php");
+    include("../aggiorna-cookie.php");
 ?>
 
 <!DOCTYPE html>

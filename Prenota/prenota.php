@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../elimina-cookie.php");
+    include("../aggiorna-cookie.php");
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,17 @@
 
     <body>
         <div class="container">
-            <?php include("../Homepage/header.php"); ?>
+            <?php
+                if($_SESSION['isLoggedIn'] == true) {
+                    include("../Homepage/header.php");
+                }
+                else{
+                    echo '<script type="text/javascript">';
+                    echo 'alert("Per poter accedere a questa pagina devi effettuare prima il Log In!");';
+                    echo 'window.location.href = "../Login-Logout/log.php";';
+                    echo '</script>';
+                }
+            ?>
 
             <!-- Form per la prenotazione del servizio -->
             <div class="center">
@@ -86,36 +96,43 @@
 
             <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if(isset($_POST["PrenotaButton"])) {
-                        include("../Login-Logout/logdb.php");
-                        
-                        $email = $_SESSION["email"];
-                        $citta = trim($_POST["citta"]);
-                        $cap = trim($_POST["cap"]);
-                        $indirizzo = $_POST["indirizzo"];
-                        $cell = trim($_POST["cell"]);
-                        $volontario = $_POST["volontario"];
-                        $data = $_POST["data"];
-                        $servizio = $_POST["servizio"];
-                        $desc = $_POST["desc"];
+                    if($_SESSION['isLoggedIn'] == true) {
+                        if(isset($_POST["PrenotaButton"])) {
+                            include("../Login-Logout/logdb.php");
+                            
+                            $email = $_SESSION["email"];
+                            $citta = trim($_POST["citta"]);
+                            $cap = trim($_POST["cap"]);
+                            $indirizzo = $_POST["indirizzo"];
+                            $cell = trim($_POST["cell"]);
+                            $volontario = $_POST["volontario"];
+                            $data = $_POST["data"];
+                            $servizio = $_POST["servizio"];
+                            $desc = $_POST["desc"];
 
-                        // Prepared statement per evitare SQL-Injection
-                        $query = "INSERT INTO prenota (email, città, cap, indirizzo, cellulare, volontario, servizio, desc_servizio, datas)
-                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";
+                            // Prepared statement per evitare SQL-Injection
+                            $query = "INSERT INTO prenota (email, città, cap, indirizzo, cellulare, volontario, servizio, desc_servizio, datas)
+                            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";
 
-                        $result = pg_query_params($db, $query, array($email, $citta, $cap, $indirizzo, $cell, $volontario, $servizio, $desc, $data));
-                        
-                        if($result) {
-                            echo '<script type="text/javascript">';
-                            echo 'alert("Prenotazione avvenuta con successo!");';
-                            echo '</script>';
-                            pg_close($db);
-                        } else {
-                            echo '<script type="text/javascript">';
-                            echo 'alert("Prenotazione all\'orario indicato già presente!");';
-                            echo '</script>';
-                            pg_close($db);
+                            $result = pg_query_params($db, $query, array($email, $citta, $cap, $indirizzo, $cell, $volontario, $servizio, $desc, $data));
+                            
+                            if($result) {
+                                echo '<script type="text/javascript">';
+                                echo 'alert("Prenotazione avvenuta con successo!");';
+                                echo '</script>';
+                                pg_close($db);
+                            } else {
+                                echo '<script type="text/javascript">';
+                                echo 'alert("Prenotazione all\'orario indicato già presente!");';
+                                echo '</script>';
+                                pg_close($db);
+                            }
                         }
+                    } else {
+                        echo '<script type="text/javascript">';
+                        echo 'alert("Per poterti prenotare devi prima accedere");';
+                        echo 'window.location.href = "../Login-Logout/log.php";';
+                        echo '</script>';
                     }
                 }
             ?>
