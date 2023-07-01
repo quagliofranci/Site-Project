@@ -305,7 +305,7 @@ footer {
 }
 
 footer h2 {
-    margin-top: 25px;
+    margin-top: 10px;
     font-size: xx-large;
     font-weight: bold;
 }
@@ -315,7 +315,7 @@ footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 5px;
     margin-bottom: 40px;
     font-size: x-large;
 }

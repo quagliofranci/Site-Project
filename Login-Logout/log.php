@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include("../aggiorna-cookie.php");
 ?>
 

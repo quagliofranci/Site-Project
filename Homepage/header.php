@@ -5,10 +5,9 @@
         $_SESSION['isLoggedIn'] = false;
     }
 
-    $nome = $_SESSION['name'];
-
     // Verifica se l'utente è autenticato
     if ($_SESSION['isLoggedIn'] == true) {
+        $nome = $_SESSION['name'];
         // Controlla se è stato inviato un parametro di logout
         if (isset($_GET['logout'])) {
             // Esegui il logout
