@@ -10,4 +10,11 @@
         <li><a href="https://www.youtube.com/" target="_blank" class="fa fa-youtube" style="color: white;"></a></li>
         <li><a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin" style="color: white;"></a></li>
     </ul>
+
+    <?php
+        if(isset($_COOKIE['visita_attuale'])) {
+            $visita_attuale = $_COOKIE['visita_attuale'];
+            echo $visita_attuale;
+        }
+    ?>
 </footer>

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include("../elimina-cookie.php");
 ?>
 
 <!DOCTYPE html>
