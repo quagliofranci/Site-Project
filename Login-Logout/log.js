@@ -47,13 +47,13 @@ function validateForm() {
         alert("La data di nascita non può essere successiva ad oggi");
         return false;
     }
-
+  
     function validateEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
         alert("L'email inserita non è valida");
         return emailPattern.test(email);
     }
-
+    
     if(password.length < 8)
     {
         alert("Il campo 'password' deve contenere almeno 8 caratteri");

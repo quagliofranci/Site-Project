@@ -60,7 +60,7 @@
                                     <option value="Matteo">Matteo</option>
                                     <option value="Riccardo">Riccardo</option>
                                 </select>
-                                
+                          
                                 <!-- Question mark che reindirizza a "Chi Siamo" per far vedere i volontari -->
                                 <a href="../Chi-Siamo/chi-siamo.php" target="_blank"><i class="fa fa-question-circle" style="color: rgb(255, 255, 175)"></i></a>
                             </div>

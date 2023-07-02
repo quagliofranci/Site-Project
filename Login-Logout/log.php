@@ -50,6 +50,7 @@
                             <!-- corpo del form di registrazione -->
 							<div class="register-form">
 								<div class="form-wrapper">
+
                                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>" id="RegisterForm" onsubmit="return validateForm();">
                                         <div class="form-fieldset">
                                             <input type="text" class="fieldset-style" id="name" placeholder="Il tuo nome" name="name" required></br></br>
@@ -57,6 +58,7 @@
                                             
                                             <p style="font-size: bolder; font-weight: 500; margin-bottom: 15px;">Data di nascita</p>
                                             <input type="date" class="fieldset-style" id="date" name="date" min="" required></br></br>
+
                                             
                                             <input type="radio" class="radio-btn" id="radiobtn" name="sex" value="M" style="vertical-align: middle"/>
                                             <label class="radio-btn" for="radiobtn">M</label>
@@ -67,6 +69,7 @@
                                             <input type="radio" class="radio-btn" id="radiobtn" name="sex" value="Altro" style="vertical-align: middle"/>
                                             <label class="radio-btn" for="radiobtn">Altro</label></br></br>
                                             
+
                                             <input type="email" class="fieldset-style" id="email" name="email" placeholder="La tua email" required></br></br>
                                             <input type="password" class="fieldset-style" id="pass" name="pass" placeholder="La tua password" required></br></br>
                                         </div>
@@ -81,6 +84,7 @@
 	      	</div>
 
             <?php 
+
                 if($_SERVER["REQUEST_METHOD"] == "POST") {
                     if(isset($_POST["RegistratiButton"])) {
                         include("logdb.php");
@@ -100,10 +104,12 @@
                         $result = pg_query_params($db, $query, array($name, $surname, $birthdate, $sesso, $email, $hash));
                         
                         if($result) {
+
                             echo '<script type="text/javascript">';
                             echo 'alert("Registrazione avvenuta con successo!");';
                             echo '</script>';
                             pg_close($db);
+
                         } else {
                             echo '<script type="text/javascript">';
                             echo 'alert("Utente è gia registrato! Si prega di effettuare il login");';
@@ -143,10 +149,12 @@
                         }
                     }
                 }
+
             ?>
 
             <!-- Footer -->
             <?php include("../Homepage/footer.php"); ?>
         </div>
+    
     </body>
 </html>
