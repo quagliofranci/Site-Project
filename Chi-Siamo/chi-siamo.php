@@ -83,25 +83,25 @@
                         <p for="descr">Disponibilit&agrave giorni:</p></br>
                         
                         <div class="giorni" required>
-                            <input type="radio" name="giorni" id="lunedi" value="lunedì">
+                            <input type="checkbox" name="giorni[]" id="lunedi" value="lunedì">
                             <label for="lunedi" style="font-size: 16px; padding-left: 5px;">Lun</label> &nbsp
 
-                            <input type="radio" name="giorni" id="martedi" value="martedi">
+                            <input type="checkbox" name="giorni[]" id="martedi" value="martedi">
                             <label for="martedi" style="font-size: 16px; padding-left: 5px;">Mar</label> &nbsp
 
-                            <input type="radio" name="giorni" id="mercoledi" value="mercoledi">
+                            <input type="checkbox" name="giorni[]" id="mercoledi" value="mercoledi">
                             <label for="mercoledi" style="font-size: 16px; padding-left: 5px;">Mer</label> &nbsp
 
-                            <input type="radio" name="giorni" id="giovedi" value="giovedi">
+                            <input type="checkbox" name="giorni[]" id="giovedi" value="giovedi">
                             <label for="giovedi" style="font-size: 16px; padding-left: 5px;">Gio</label> &nbsp
 
-                            <input type="radio" name="giorni" id="venerdi" value="venerdi">
+                            <input type="checkbox" name="giorni[]" id="venerdi" value="venerdi">
                             <label for="venerdi" style="font-size: 16px; padding-left: 5px;">Ven</label> &nbsp
 
-                            <input type="radio" name="giorni" id="sabato" value="sabato">
+                            <input type="checkbox" name="giorni[]" id="sabato" value="sabato">
                             <label for="sabato" style="font-size: 16px; padding-left: 5px;">Sab</label> &nbsp
 
-                            <input type="radio" name="giorni" id="domenica" value="domenica">
+                            <input type="checkbox" name="giorni[]" id="domenica" value="domenica">
                             <label for="domenica" style="font-size: 16px; padding-left: 5px;">Dom</label>
                         </div>
 
@@ -126,13 +126,16 @@
                         $citta = trim($_POST["citta"]);
                         $cell = trim($_POST["cell"]);
                         $giorni = $_POST["giorni"];
+                        // la funzione "implode()" di PHP serve a convertire i giorni in un array 
+                        //con i valori relativi ai singoli giorni separati da virgole anziché avere "Array" nel database
+                        $giorni_str = "{" . implode(", ", $giorni) . "}"; // il "." concatena le stringhe in PHP
                         $desc = trim($_POST["desc"]);
                         
                         // Prepared statement per evitare SQL-Injection
                         $query = "INSERT INTO volontari (nome, cognome, età, email, città, telefono, disponibilità, descrizione)
-                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)";
+                        VALUES ($1, $2, $3, $4, $5, $6, $7::text[], $8)";
 
-                        $result = pg_query_params($db, $query, array($name, $surname, $eta, $email, $citta, $cell, $giorni, $desc));
+                        $result = pg_query_params($db, $query, array($name, $surname, $eta, $email, $citta, $cell, $giorni_str, $desc));
                         
                         if($result) {
                             echo '<script type="text/javascript">';

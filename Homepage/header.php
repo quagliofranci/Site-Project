@@ -8,6 +8,7 @@
     // Verifica se l'utente è autenticato
     if ($_SESSION['isLoggedIn'] == true) {
         $nome = $_SESSION['name'];
+        
         // Controlla se è stato inviato un parametro di logout
         if (isset($_GET['logout'])) {
             // Esegui il logout
@@ -36,12 +37,12 @@
                 </a>
 
                 <ul id="menu-drop">
-                    <li><a href="#">PRENOTAZIONI</i></a></li>
+                    <li><a href="#">PRENOTAZIONI</a></li>
                     <li><a href="../Login-Logout/log.php?logout=true">ESCI</a></li>
                  </ul>
             </li>
         <?php else: ?>
-            <li><a href="../Login-Logout/log.php">LOGIN</i></a></li>
+            <li><a href="../Login-Logout/log.php">LOGIN</a></li>
         <?php endif; ?>
     </ul>
 </header>
