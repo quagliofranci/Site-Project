@@ -17,7 +17,7 @@ body {
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
     background-image: url(../images/form.jpg);
-    height: 1000px;
+    height: 1200px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
