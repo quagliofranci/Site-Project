@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("../aggiorna-cookie.php");
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +38,8 @@
 								<div class="form-wrapper">
                                     <form id="AccediForm" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
                                         <div class="form-fieldset">
-                                            <input type="email" class="fieldset-style"   name = "email" placeholder="La tua email" required></br></br>
-                                            <input type="password" class="fieldset-style"  name = "pass" placeholder="La tua password" required></br></br></br>
+                                            <input type="email" class="fieldset-style" name="email" placeholder="La tua email" required></br></br>
+                                            <input type="password" class="fieldset-style" name="pass" placeholder="La tua password" required></br></br></br>
                                         </div>
 
 									    <input type="submit" class="login-button" name="AccediButton" value="Accedi"></br></br>
@@ -50,25 +50,28 @@
                             <!-- corpo del form di registrazione -->
 							<div class="register-form">
 								<div class="form-wrapper">
-                                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>" id="RegisterForm" onsubmit="return validateForm();" >
+
+                                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>" id="RegisterForm" onsubmit="return validateForm();">
                                         <div class="form-fieldset">
-                                            <input type="text" class="fieldset-style" id="name" placeholder="Il tuo nome" name = "name" required></br></br>
-                                            <input type="text" class="fieldset-style" id="surname" placeholder="Il tuo cognome" name = "surname" required></br></br>
+                                            <input type="text" class="fieldset-style" id="name" placeholder="Il tuo nome" name="name" required></br></br>
+                                            <input type="text" class="fieldset-style" id="surname" placeholder="Il tuo cognome" name="surname" required></br></br>
                                             
                                             <p style="font-size: bolder; font-weight: 500; margin-bottom: 15px;">Data di nascita</p>
-                                            <input type="date" class="fieldset-style" id="date" name = "date" required></br></br>
+                                            <input type="date" class="fieldset-style" id="date" name="date" min="" required></br></br>
+
                                             
-                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle"/>
+                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" value="M" style="vertical-align: middle"/>
                                             <label class="radio-btn" for="radiobtn">M</label>
 
-                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle"/>
+                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" value="F" style="vertical-align: middle"/>
                                             <label class="radio-btn" for="radiobtn">F</label>
 
-                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" style="vertical-align: middle"/>
+                                            <input type="radio" class="radio-btn" id="radiobtn" name="sex" value="Altro" style="vertical-align: middle"/>
                                             <label class="radio-btn" for="radiobtn">Altro</label></br></br>
                                             
-                                            <input type="email" class="fieldset-style" id="email" name = "email" placeholder="La tua email" required></br></br>
-                                            <input type="password" class="fieldset-style" id="pass" name = "pass" placeholder="La tua password" required></br></br>
+
+                                            <input type="email" class="fieldset-style" id="email" name="email" placeholder="La tua email" required></br></br>
+                                            <input type="password" class="fieldset-style" id="pass" name="pass" placeholder="La tua password" required></br></br>
                                         </div>
 
 									    <input type="submit" class="register-button" name="RegistratiButton" value="Registrati">
@@ -81,72 +84,72 @@
 	      	</div>
 
             <?php 
-                 if ($_SERVER["REQUEST_METHOD"] == "POST" ) {    
-                    if (isset($_POST["RegistratiButton"])) {
-                        include("logindatab.php");
 
+                if($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if(isset($_POST["RegistratiButton"])) {
+                        include("logdb.php");
 
-                        $name = $_POST["name"];
-                        $surname = $_POST["surname"]; 
+                        $name = trim($_POST["name"]);
+                        $surname = trim($_POST["surname"]);
                         $birthdate = $_POST["date"];
                         $sesso = $_POST["sex"];
-                        $email = $_POST["email"];
-                        $pass = $_POST["pass"];
+                        $email = trim($_POST["email"]);
+                        $pass = trim($_POST["pass"]);
                         $hash = password_hash($pass, PASSWORD_DEFAULT);
 
-                        $query = "INSERT INTO Utente (nome, cognome, nascita, sesso, email, password)
-                        VALUES ('$name', '$surname', '$birthdate','$sesso', '$email', '$hash');" ; 
+                        // Prepared statement per evitare SQL-Injection
+                        $query = "INSERT INTO Utente (nome, cognome, nascita, sesso, email, pass)
+                        VALUES ($1, $2, $3, $4, $5, $6);";
 
-                        $result= pg_query($db,$query);
+                        $result = pg_query_params($db, $query, array($name, $surname, $birthdate, $sesso, $email, $hash));
                         
-                        if($result){
+                        if($result) {
+
                             echo '<script type="text/javascript">';
                             echo 'alert("Registrazione avvenuta con successo!");';
                             echo '</script>';
                             pg_close($db);
-                          }else{
+
+                        } else {
                             echo '<script type="text/javascript">';
-                            echo 'alert(" Utente è gia registrato! Si prega di effettuare il login");';
+                            echo 'alert("Utente è gia registrato! Si prega di effettuare il login");';
                             echo '</script>';
                             pg_close($db);
-                          }
-                  
-                    }
-                        else if (isset($_POST["AccediButton"])) {
-                            include("logindatab.php");
-
-                            $email = trim($_POST["email"]); 
-                            $pass =  trim($_POST["pass"]); 
-                    
-                            $query = "SELECT nome, email, password FROM Utente WHERE email = '$email';";
-                    
-                            $result2= pg_query($db,$query); 
-                    
-                            $row= pg_fetch_assoc($result2);
-                    
-                            $hash = $row['pass'];
-
-                            
-                    
-                            if (!password_verify($pass, $hash)) {
-                              echo '<script type="text/javascript">';
-                              echo "alert('L''email o la password inserite non sono corrette, si prega di riprovare ;)');";
-                              echo '</script>'; 
-                              pg_close($db);
-                            } else {
-                              $_SESSION['name'] = $row[0];
-                              $_SESSION['isLoggedIn'] = true;
-                              $_SESSION['email'] = $row[1];
-                              pg_close($db);
-                             
-                            }      
-                          } 
-
                         }
-                     
-        
-                
-                
+                    }
+                    else if (isset($_POST["AccediButton"])) {
+                        include("logdb.php");
+
+                        $email = trim($_POST["email"]);
+                        $pass = trim($_POST["pass"]);
+                    
+                        $query = "SELECT nome, email, pass FROM Utente WHERE email='$email';";
+                    
+                        $result2 = pg_query($db, $query);
+                    
+                        $row = pg_fetch_row($result2);
+                    
+                        $hash = $row[2];
+                    
+                        if(!password_verify($pass, $hash)) {
+                            echo '<script type="text/javascript">';
+                            echo 'alert("L\'email o la password inserite non sono corrette, si prega di riprovare");';
+                            echo '</script>';
+                            pg_close($db);
+                        } else {
+                            $_SESSION['name'] = $row[0];
+                            $_SESSION['isLoggedIn'] = true;
+                            $_SESSION['email'] = $row[1];
+                            pg_close($db);
+                            // Script per ricaricare la pagina col nuovo header post login
+                            echo '<script type="text/javascript">';
+                            echo 'window.location.href = "../Homepage/homepage.php";';
+                            echo '</script>';
+                            exit;
+                        }
+                    }
+                }
+
             ?>
 
             <!-- Footer -->

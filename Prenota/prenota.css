@@ -16,8 +16,8 @@ body {
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
-    background-image:url(../images/form.jpg);
-    height: 950px;
+    background-image: url(../images/form.jpg);
+    height: 1300px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body {
 /*
  * HEADER
  */
-header {
+ header {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,7 +41,7 @@ header {
     z-index: 2; /* imposta l'elemento come soprastante nello stack di rendering 3d */
 }
 
-#chi-siamo{
+#chi-siamo {
     cursor: help;
 }
 
@@ -61,19 +61,28 @@ header .logo {
     transition: color 0.8s ease, transform 0.8s ease;
 }
 
-header ul {
+#menu {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header ul li {
+#menu:before, #menu:after {
+    content: '';
+    display: table;
+}
+
+#menu:after {
+    clear: both;
+}
+
+#menu li {
     position: relative;
     list-style: none;
 }
 
-header ul li a {
+#menu a {
     position: relative;
     margin: 0 30px; /*margine con il div il primo valore è il margin sul soffitto l'altro è il margin sul bordo del div destro e sinistro*/
     text-decoration: none;
@@ -81,6 +90,26 @@ header ul li a {
     letter-spacing: 2px;
     font-weight: bold;
     transition: 0.5s;
+}
+
+#menu ul {
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    opacity: 1;
+    position: absolute;
+    top: 100%;
+    display: none;
+    transition: all 0.6s ease-in-out;
+    background-color: #7f9dc3;
+    z-index: 1;
+}
+
+#menu li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    animation: all 0.6s ease-in-out;
 }
 
 header.sticky .logo, header.sticky ul li a {
@@ -92,7 +121,7 @@ header .logo:hover {
     transform: scale(0.9); /* Trasformazione al passaggio del mouse */
 }
 
-header ul li a:hover, header ul li a:focus {
+#menu li a:hover, #menu li a:focus {
     background-color: #fff;
     color: #333;
     padding: 0.5rem;
@@ -107,7 +136,7 @@ header ul li a:hover, header ul li a:focus {
     position: relative;
     display: grid;
     gap: 50px;
-    padding-top: 5.25%;
+    padding-top: 130px;
     place-items: center;
 }
 
@@ -119,11 +148,6 @@ header ul li a:hover, header ul li a:focus {
     align-items: center;
     text-align: center;
     background-color: #191825;
-}
-
-.form-fieldset {
-    position: relative;
-    display: block;
 }
 
 .fieldset {
@@ -150,10 +174,20 @@ header ul li a:hover, header ul li a:focus {
     font-size: 20px;
 }
 
-p {
+.data-prenotazione {
+    margin-top: 30px;
+}
+
+.data-prenotazione label {
+    position: relative;
     font-size: 15px;
     font-weight: 600;
-    padding-top: 20px;
+}
+
+.form-fieldset p {
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 10px;
 }
 
 .radio-btn {
@@ -240,4 +274,48 @@ footer ul li a {
 footer ul li a:hover {
     font-size: large;
     transition: all 0.5s easy;
+}
+
+/*
+ * RESPONSIVITÀ FINESTRA
+ */
+@media screen and (max-width: 1000px) {
+    .container {
+        height: 1350px;
+    }
+
+    /*
+     * HEADER
+     */
+    header {
+        padding: 60px 50px;
+        flex-direction: column;
+        align-items: flex-start; /* Allinea i contenuti a sinistra */
+    }
+ 
+    header .logo {
+        margin-bottom: 20px;
+        direction: initial;
+    }
+ 
+    header ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Allinea i link a destra */
+    }
+ 
+    header ul li {
+        margin-bottom: 10px;
+    }
+ 
+    header ul li a {
+        margin: 0;
+    }
+
+    /*
+     * FORM
+     */
+    .center {
+        padding-top: 50%;
+    }
 }

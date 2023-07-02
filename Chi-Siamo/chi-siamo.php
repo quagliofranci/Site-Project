@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("../aggiorna-cookie.php");
 ?>
 
 <!DOCTYPE html>
@@ -58,61 +58,99 @@
             <div class="row3">
                 <h2>Vuoi unirti a noi?</br>Compila il form!</h2>
 
-                <form id="candidati-form" onsubmit="return validateForm();">
+                <form id="candidati-form" method="post" action="<?php echo $_SERVER['PHP_SELF']?>" onsubmit="return validateForm();">
                     <div class="form-fieldset">
                         <!-- Nome -->
-                        <input type="text" class="fieldset" id="nome" placeholder="Il tuo nome" required></br></br>
+                        <input type="text" class="fieldset" id="nome" name="nome" placeholder="Il tuo nome" required></br></br>
                             
                         <!-- Cognome -->
-                        <input type="text" class="fieldset" id="cognome" placeholder="Il tuo cognome" required></br></br>
+                        <input type="text" class="fieldset" id="cognome" name="cognome" placeholder="Il tuo cognome" required></br></br>
                             
                         <!-- Età -->
-                        <input type="number" min="0" class="fieldset" id="eta" placeholder="La tua età" required></br></br>
+                        <input type="number" min="0" class="fieldset" id="eta" name="eta" placeholder="La tua età" required></br></br>
                             
                         <!-- Indirizzo email -->
-                        <input type="email" class="fieldset" id="email" placeholder="Il tuo indirizzo email" required></br></br>
+                        <input type="email" class="fieldset" id="email" name="email" placeholder="Il tuo indirizzo email" required></br></br>
                             
                         <!-- Città -->
-                        <input type="text" class="fieldset" id="citta" placeholder="La tua città" required></br></br>
+                        <input type="text" class="fieldset" id="citta" name="citta" placeholder="La tua città" required></br></br>
                             
                         <!-- Cellulare -->
                         <!-- Il pattern inserito impedisce di inserire numeri che siano diversi dal formato scelto -->
-                        <input type="tel" class="fieldset" id="cell" pattern="[0-9]{10}" placeholder="Il tuo numero di cellulare" required></br></br>
+                        <input type="tel" class="fieldset" id="cell" name="cell" pattern="[0-9]{10}" placeholder="Il tuo numero di cellulare" required></br></br>
                             
                         <!-- Disponibiltà-->
                         <p for="descr">Disponibilit&agrave giorni:</p></br>
                         
                         <div class="giorni" required>
-                            <input type="checkbox" id="lunedi">
-                            <label for="lunedi">Lun</label> &nbsp
+                            <input type="checkbox" name="giorni[]" id="lunedi" value="lunedì">
+                            <label for="lunedi" style="font-size: 16px; padding-left: 5px;">Lun</label> &nbsp
 
-                            <input type="checkbox" id="martedi">
-                            <label for="martedi">Mar</label> &nbsp
+                            <input type="checkbox" name="giorni[]" id="martedi" value="martedi">
+                            <label for="martedi" style="font-size: 16px; padding-left: 5px;">Mar</label> &nbsp
 
-                            <input type="checkbox" id="mercoledi">
-                            <label for="mercoledi">Mer</label> &nbsp
+                            <input type="checkbox" name="giorni[]" id="mercoledi" value="mercoledi">
+                            <label for="mercoledi" style="font-size: 16px; padding-left: 5px;">Mer</label> &nbsp
 
-                            <input type="checkbox" id="giovedi">
-                            <label for="giovedi">Gio</label> &nbsp
+                            <input type="checkbox" name="giorni[]" id="giovedi" value="giovedi">
+                            <label for="giovedi" style="font-size: 16px; padding-left: 5px;">Gio</label> &nbsp
 
-                            <input type="checkbox" id="venerdi">
-                            <label for="venerdi">Ven</label> &nbsp
+                            <input type="checkbox" name="giorni[]" id="venerdi" value="venerdi">
+                            <label for="venerdi" style="font-size: 16px; padding-left: 5px;">Ven</label> &nbsp
 
-                            <input type="checkbox" id="sabato">
-                            <label for="sabato">Sab</label> &nbsp
+                            <input type="checkbox" name="giorni[]" id="sabato" value="sabato">
+                            <label for="sabato" style="font-size: 16px; padding-left: 5px;">Sab</label> &nbsp
 
-                            <input type="checkbox" id="domenica">
-                            <label for="domenica">Dom</label>
+                            <input type="checkbox" name="giorni[]" id="domenica" value="domenica">
+                            <label for="domenica" style="font-size: 16px; padding-left: 5px;">Dom</label>
                         </div>
 
                         <!-- Note sul servizio -->
                         <p for="descr">Descrizione delle tue competenze:</p></br>
-                        <input type="text" class="fieldset" id="descr"></br></br>
+                        <input type="text" class="fieldset" id="descr" name="desc"></br></br>
                     </div>
 
                     <input type="submit" class="candidati-btn" name="CandidatiButton" value="Candidati">
                 </form>
             </div>
+
+            <?php 
+                if($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if(isset($_POST["CandidatiButton"])) {
+                        include("../Login-Logout/logdb.php");
+
+                        $name = trim($_POST["nome"]);
+                        $surname = trim($_POST["cognome"]);
+                        $eta = $_POST["eta"];
+                        $email = trim($_POST["email"]);
+                        $citta = trim($_POST["citta"]);
+                        $cell = trim($_POST["cell"]);
+                        $giorni = $_POST["giorni"];
+                        // la funzione "implode()" di PHP serve a convertire i giorni in un array 
+                        //con i valori relativi ai singoli giorni separati da virgole anziché avere "Array" nel database
+                        $giorni_str = "{" . implode(", ", $giorni) . "}"; // il "." concatena le stringhe in PHP
+                        $desc = trim($_POST["desc"]);
+                        
+                        // Prepared statement per evitare SQL-Injection
+                        $query = "INSERT INTO volontari (nome, cognome, età, email, città, telefono, disponibilità, descrizione)
+                        VALUES ($1, $2, $3, $4, $5, $6, $7::text[], $8)";
+
+                        $result = pg_query_params($db, $query, array($name, $surname, $eta, $email, $citta, $cell, $giorni_str, $desc));
+                        
+                        if($result) {
+                            echo '<script type="text/javascript">';
+                            echo 'alert("Candidatura presentata con successo!");';
+                            echo '</script>';
+                            pg_close($db);
+                        } else {
+                            echo '<script type="text/javascript">';
+                            echo 'alert("Candidatura già effettuata!");';
+                            echo '</script>';
+                            pg_close($db);
+                        }
+                    }
+                }
+            ?>
 
             <?php include("../Homepage/footer.php"); ?>
         </div>

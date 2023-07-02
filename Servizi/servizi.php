@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("../aggiorna-cookie.php");
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +33,13 @@
                     </div>
 
                     <div class="right-column1">
-                        <img src="../images/servizi2.jpg" style="max-width: 500px; max-height: 500px;"/>
+                        <img src="../images/servizi2.jpg"/>
                     </div>
                 </div>
 
                 <div class="row2">
                     <div class="left-column2">
-                        <img src="../images/image.png" style="max-width: 500px; max-height: 500px;"/>
+                        <img src="../images/image.png"/>
                     </div>
 
                     <div class="right-column2">
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="right-column3">
-                        <img src="../images/servizi.jpg" style="max-width: 500px; max-height: 500px;"/>
+                        <img src="../images/servizi.jpg"/>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,6 @@
             <div class="prenota">
                 <h2>
                     Vuoi prenotare un nostro servizio?</br>
-                
                     Clicca qui!</br>
 
                     <i class="fa fa-arrow-down"></i>

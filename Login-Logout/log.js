@@ -10,9 +10,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function getTodayDate() {
+    date = new Date();
+    day = date.getDate();
+    month = date.getMonth() + 1; // Poiché parte da Gennaio=0, quindi +1 --> Gennaio=1
+    year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    today = year + "-" + month + "-" + day;	
+    
+    return today;
+}
+
 function validateForm() {
     var nome = document.getElementById("name").value;
     var cognome = document.getElementById("surname").value;
+    var birth = document.getElementById('date').value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("pass").value;
 
@@ -27,7 +42,12 @@ function validateForm() {
         alert("Il campo 'Cognome' deve contenere almeno 3 caratteri");
         return false;
     }
-    
+
+    if(birth > getTodayDate()) {
+        alert("La data di nascita non può essere successiva ad oggi");
+        return false;
+    }
+  
     function validateEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
         alert("L'email inserita non è valida");

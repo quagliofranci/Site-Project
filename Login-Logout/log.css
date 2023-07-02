@@ -16,8 +16,8 @@ body {
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
-    background-image:url(../images/form.jpg);
-    height: 950px;
+    background-image: url(../images/form.jpg);
+    height: 1200px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@ header {
     z-index: 2; /* imposta l'elemento come soprastante nello stack di rendering 3d */
 }
 
-#chi-siamo{
+#chi-siamo {
     cursor: help;
 }
 
@@ -61,19 +61,28 @@ header .logo {
     transition: color 0.8s ease, transform 0.8s ease;
 }
 
-header ul {
+#menu {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header ul li {
+#menu:before, #menu:after {
+    content: '';
+    display: table;
+}
+
+#menu:after {
+    clear: both;
+}
+
+#menu li {
     position: relative;
     list-style: none;
 }
 
-header ul li a {
+#menu a {
     position: relative;
     margin: 0 30px; /*margine con il div il primo valore è il margin sul soffitto l'altro è il margin sul bordo del div destro e sinistro*/
     text-decoration: none;
@@ -81,6 +90,26 @@ header ul li a {
     letter-spacing: 2px;
     font-weight: bold;
     transition: 0.5s;
+}
+
+#menu ul {
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    opacity: 1;
+    position: absolute;
+    top: 100%;
+    display: none;
+    transition: all 0.6s ease-in-out;
+    background-color: #7f9dc3;
+    z-index: 1;
+}
+
+#menu li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    animation: all 0.6s ease-in-out;
 }
 
 header.sticky .logo, header.sticky ul li a {
@@ -92,7 +121,7 @@ header .logo:hover {
     transform: scale(0.9); /* Trasformazione al passaggio del mouse */
 }
 
-header ul li a:hover, header ul li a:focus {
+#menu li a:hover, #menu li a:focus {
     background-color: #fff;
     color: #333;
     padding: 0.5rem;
@@ -104,10 +133,12 @@ header ul li a:hover, header ul li a:focus {
  * FORM BODY
  */
 .row {
-    position: fixed;
+    position: relative;
     padding-top: 7%;
-    padding-left: 38%;
+    padding-left: 35%;
     padding-right: 40%;
+    align-items: center;
+    text-align: center;
 }
 
 .column {
@@ -115,6 +146,10 @@ header ul li a:hover, header ul li a:focus {
     position: relative;
     width: 100%;
     display: block;
+}
+
+.column h6 {
+    width: 500px;
 }
 
 .login-btn, .reg-btn {
@@ -125,7 +160,7 @@ header ul li a:hover, header ul li a:focus {
     color: rgb(255, 255, 130);
     padding: 10px auto;
     border-radius: 12px;
-    margin: 10px auto;
+    margin: 20px auto;
     font-size: 20px;
     font-weight: 600;
     padding-top: 10px;
@@ -259,7 +294,7 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 130px;
+    height: 140px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -270,7 +305,7 @@ footer {
 }
 
 footer h2 {
-    margin-top: 25px;
+    margin-top: 10px;
     font-size: xx-large;
     font-weight: bold;
 }
@@ -280,7 +315,7 @@ footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 5px;
     margin-bottom: 40px;
     font-size: x-large;
 }
@@ -303,4 +338,166 @@ footer ul li a {
 footer ul li a:hover {
     font-size: large;
     transition: all 0.5s easy;
+}
+
+/*
+ * RESPONSIVITÀ FINESTRA
+ */
+@media screen and (max-width: 1000px) {
+    .container {
+        height: 1200px;
+    }
+
+    /*
+     * HEADER
+     */
+    header {
+        padding: 60px 50px;
+        flex-direction: column;
+        align-items: flex-start; /* Allinea i contenuti a sinistra */
+    }
+ 
+    header .logo {
+        margin-bottom: 20px;
+        direction: initial;
+    }
+ 
+    header ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Allinea i link a destra */
+    }
+ 
+    header ul li {
+        margin-bottom: 10px;
+    }
+ 
+    header ul li a {
+        margin: 0;
+    }
+
+    /*
+     * FORM BODY
+     */
+    .row {
+        padding-top: 50%;
+        padding-left: 15%;
+        display: grid;
+        place-items: center;
+    }
+
+    .login-btn, .reg-btn {
+        margin-right: 40px;
+    }
+
+    .form {
+        position: relative;
+        width: 500px;
+        height: 550px;
+        /* per permettere il doppio form imposto il "preserve-3d", il quale permette di avere un form in 3D e implementare altre componenti avanti e dietro */
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        perspective: 1000px; /* permette di avere l'effetto "hamburger" quando si switcha tra i form, plus: è carino */
+        margin-top: 30px; /* distanza dal blocco col pallino */
+        transition: all 600ms ease-out;
+    }
+
+    /* questa classe permette di avere un layer di separazione tra il form di login e quello di registrazione */
+    .form-divider {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .login-form, .register-form {
+        width: 100%;
+        height: 100%;
+        background-color: #191825;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 30px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    /* questa classe serve a tenere insieme i form singolarmente */
+    /* per capirne il funzionamento inserire, ad esempio, la proprietà: background-color: yellow; */
+    .form-wrapper {
+        position: absolute;
+        width: 100%;
+        padding: 0 35px;
+        top: 50%;
+        left: 0;
+        transform: translate3d(0, -50%, 35px) perspective(100px);
+        display: block;
+    }
+
+    /* opzioni del form, esempio: email, password */
+    .form-fieldset {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* questa classe serve per le scritte preimpostate e per ciò che l'utente finale andrà a scrivere */
+    .fieldset-style {
+        padding-left: 30px; /* distanza della scritta dal lato sinistro del box */
+        height: 50px;
+        width: 100%;
+        font-weight: 600;
+        border-radius: 12px;
+        font-size: 15px;
+        color: rgb(214, 214, 214);
+        background-color: #1f2029;
+        border: none;
+    }
+
+    .radio-btn {
+        position: relative;
+        height: 24px;
+        width: 24px;
+        font-size: 20;
+        font-weight: 600;
+        margin-left: 15px;
+        padding-right: 45px;
+    }
+
+    /* botton di login e registrazione */
+    .login-button, .register-button {
+        display: inline-flex;
+        height: 44px;
+        font-size: 15px;
+        font-weight: 550;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 0 30px;
+        border-radius: 24px;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: rgb(255, 255, 173);
+        color: #102770;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 300ms linear;
+    }
+
+    .login-button:hover, .register-button:hover {
+        text-decoration: none;
+        background-color: #102770;
+        color: rgb(255, 255, 173);
+        box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+    }
+
+    /* transizione per vedere il form di registrazione */
+    .register-form {
+        transform: rotateY(180deg);
+    }
 }

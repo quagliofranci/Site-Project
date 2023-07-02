@@ -14,7 +14,7 @@ body {
 
 /* impostando l'immagine di sfondo in questo modo (fixed), creo l'effetto parallasse (parallax) */
 .container {
-    background-image:url(../images/homepage2.jpg);
+    background-image: url(../images/homepage2.jpg);
     height: 1000px;
     background-attachment: fixed;
     background-position: center;
@@ -39,7 +39,7 @@ header {
     z-index: 2; /* imposta l'elemento come soprastante nello stack di rendering 3d */
 }
 
-#chi-siamo{
+#chi-siamo {
     cursor: help;
 }
 
@@ -59,19 +59,28 @@ header .logo {
     transition: color 0.8s ease, transform 0.8s ease;
 }
 
-header ul {
+#menu {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header ul li {
+#menu:before, #menu:after {
+    content: '';
+    display: table;
+}
+
+#menu:after {
+    clear: both;
+}
+
+#menu li {
     position: relative;
     list-style: none;
 }
 
-header ul li a {
+#menu a {
     position: relative;
     margin: 0 30px; /*margine con il div il primo valore è il margin sul soffitto l'altro è il margin sul bordo del div destro e sinistro*/
     text-decoration: none;
@@ -79,6 +88,26 @@ header ul li a {
     letter-spacing: 2px;
     font-weight: bold;
     transition: 0.5s;
+}
+
+#menu ul {
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    opacity: 1;
+    position: absolute;
+    top: 100%;
+    display: none;
+    transition: all 0.6s ease-in-out;
+    background-color: #7f9dc3;
+    z-index: 1;
+}
+
+#menu li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    animation: all 0.6s ease-in-out;
 }
 
 header.sticky .logo, header.sticky ul li a {
@@ -90,7 +119,7 @@ header .logo:hover {
     transform: scale(0.9); /* Trasformazione al passaggio del mouse */
 }
 
-header ul li a:hover, header ul li a:focus {
+#menu li a:hover {
     background-color: #fff;
     color: #333;
     padding: 0.5rem;
@@ -114,12 +143,14 @@ header ul li a:hover, header ul li a:focus {
     flex: 1;
     flex-wrap: wrap; /* Permette di mandare il testo su righe differenti, anziché risultare su più colonne */
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
     color:black;
     font-size: 30px;
-    margin-top: 10%;
+    margin-top: 100px;
     margin-left: 65%;
     margin-right: 5.5%;
     margin-bottom: 10%;
+    padding: 20px;
     text-align: center;
     position: relative;
     justify-content: center;
@@ -187,7 +218,7 @@ header ul li a:hover, header ul li a:focus {
     flex: 1;
     position: relative;
     margin-top: 20%;
-    margin-bottom: 21%;
+    margin-bottom: 25%;
     margin-left: 25%;
     margin-right: 25%;
     color:black;
@@ -322,6 +353,7 @@ footer {
     position: relative;
     left: 0;
     bottom: 0;
+    height: 170px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -332,7 +364,7 @@ footer {
 }
 
 footer h2 {
-    margin-top: 25px;
+    margin-top: 10px;
     font-size: xx-large;
     font-weight: bold;
 }
@@ -342,7 +374,7 @@ footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 40px;
     font-size: x-large;
 }
@@ -370,8 +402,63 @@ footer ul li a:hover {
 /*
  * RESPONSIVITÀ FINESTRA
  */
-/*
-@media screen and (max width: 1000px) {
-    
+@media screen and (max-width: 1000px) {
+    /*
+     * HEADER
+     */
+    header {
+        padding: 60px 50px;
+        flex-direction: column;
+        align-items: flex-start; /* Allinea i contenuti a sinistra */
+    }
+ 
+    header .logo {
+        margin-bottom: 20px;
+        direction: initial;
+    }
+ 
+    header ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Allinea i link a destra */
+    }
+ 
+    header ul li {
+        margin-bottom: 10px;
+    }
+ 
+    header ul li a {
+        margin: 0;
+    }
+
+    /*
+     * UPPER BODY
+     */
+    .column-upper-right {
+        font-size: 30px;
+        margin-top: 50%;
+        margin-left: 35%;
+        margin-right: 5.5%;
+        margin-bottom: 10%;
+    }
+
+    /*
+     * CENTRAL BODY
+     */
+    .column-central-left {
+        margin-top: 20%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-bottom: auto;
+        backdrop-filter: blur(20px);
+    }
+
+    /*
+     * CONTATTI
+     */
+    .contatto1, .contatto2, .contatto3 {
+        padding: 12px 15px;
+        width: min-content;
+        height: fit-content;
+    }
 }
-*/
